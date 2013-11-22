@@ -263,7 +263,7 @@ Ext.define("OMV.module.admin.service.anacron.Tasks", {
     onUploadButton: function() {
         var me = this;
         Ext.create("OMV.window.Upload", {
-            title: _("Upload package"),
+            title: _("Upload script"),
             service: "Anacron",
             method: "doUpload",
             listeners: {
