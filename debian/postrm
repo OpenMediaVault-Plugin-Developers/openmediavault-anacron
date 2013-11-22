@@ -1,0 +1,60 @@
+#!/bin/sh
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+case "$1" in
+    purge)
+        omv_config_delete "//services/anacron"
+        rm -rf /var/lib/anacron
+
+        cat <<EOF > /etc/anacrontab
+
+# /etc/anacrontab: configuration file for anacron
+
+# See anacron(8) and anacrontab(5) for details.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# These replace cron's entries
+1       5       cron.daily       nice run-parts --report /etc/cron.daily
+7       10      cron.weekly      nice run-parts --report /etc/cron.weekly
+@monthly        15      cron.monthly nice run-parts --report /etc/cron.monthly
+EOF
+
+    ;;
+
+    remove)
+
+        cat <<EOF > /etc/anacrontab
+
+# /etc/anacrontab: configuration file for anacron
+
+# See anacron(8) and anacrontab(5) for details.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# These replace cron's entries
+1       5       cron.daily       nice run-parts --report /etc/cron.daily
+7       10      cron.weekly      nice run-parts --report /etc/cron.weekly
+@monthly        15      cron.monthly nice run-parts --report /etc/cron.monthly
+EOF
+
+    ;;
+
+    upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+    ;;
+
+    *)
+        echo "postrm called with unknown argument" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

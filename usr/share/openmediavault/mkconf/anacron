@@ -1,0 +1,64 @@
+#!/bin/sh
+#
+# Copyright (C)      2013 OpenMediaVault Plugin Developers
+#
+# This file is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This file is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this file. If not, see <http://www.gnu.org/licenses/>.
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+ANACRON_CONFIG="/etc/anacrontab"
+ANACRON_SCRIPT_DIR="/var/lib/anacron/"
+
+if [ -d "${ANACRON_SCRIPT_DIR}" ]; then
+    mkdir -p ${ANACRON_SCRIPT_DIR}
+fi
+
+# Create anacron config file
+cat <<EOF > ${ANACRON_CONFIG}
+# /etc/anacrontab: configuration file for anacron
+
+# See anacron(8) and anacrontab(5) for details.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# These replace cron's entries
+1       5       cron.daily       nice run-parts --report /etc/cron.daily
+7       10      cron.weekly      nice run-parts --report /etc/cron.weekly
+@monthly        15      cron.monthly nice run-parts --report /etc/cron.monthly
+
+# added by plugin
+EOF
+
+# Add anacron tasks
+# format:
+#   period        delay  job-identifier  command
+#   @period_name  delay  job-identify    command
+
+count=$(omv_config_get_count "//services/anacron/task")
+index=1
+while [ ${index} -le ${count} ]; do
+
+    period=$(omv_config_get "//services/anacron/task[position()=${index}]/period")
+    delay=$(omv_config_get "//services/anacron/task[position()=${index}]/delay")
+    identifier=$(omv_config_get "//services/anacron/task[position()=${index}]/identifier")
+    command=$(omv_config_get "//services/anacron/task[position()=${index}]/command")
+
+    echo "${period}\t${delay}\t${identifier}\t/var/lib/anacron/${command}" >> ${ANACRON_CONFIG}
+
+    index=$(( ${index} + 1 ))
+done
