@@ -15,8 +15,9 @@ case "$1" in
         omv_config_add_element "/config/services" "anacron" "${object}" true
     fi
 
-    if [ -d "${ANACRON_SCRIPT_DIR}" ]; then
+    if [ ! -d "${ANACRON_SCRIPT_DIR}" ]; then
         mkdir -p ${ANACRON_SCRIPT_DIR}
+        chmod 0755 ${ANACRON_SCRIPT_DIR}
     fi
 
     ;;

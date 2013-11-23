@@ -39,6 +39,7 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         $this->registerMethod('deleteTask');
         $this->registerMethod('getCommands');
         $this->registerMethod('doUpload');
+        $this->registerMethod('doExecute');
     }
 
     public function getTasks($params, $context) {
@@ -61,12 +62,22 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         // Get the configuration object.
         $xpath = "//services/anacron/task";
         $objects = $xmlConfig->getList($xpath);
-        
+
         if(is_null($objects))
             throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
 
+        // Get cron jobs that match the given type.
+        $jobs = array();
+        foreach($objects as $objectk => $objectv) {
+            // Modify result data.
+            $objectv['enable'] = boolval($objectv['enable']);
+            $objectv['sendemail'] = boolval($objectv['sendemail']);
+
+            $jobs[] = $objectv;
+        }
+
         // Filter the result.
-        return $this->applyFilter($objects, $params['start'], $params['limit'], 
+        return $this->applyFilter($jobs, $params['start'], $params['limit'],
             $params['sortfield'], $params['sortdir']);
     }
 
@@ -87,9 +98,13 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         // Get the configuration object.
         $xpath = sprintf("//services/anacron/task[uuid='%s']", $params['uuid']);
         $object = $xmlConfig->get($xpath);
-        
+
         if(is_null($object))
             throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
+
+        // Modify the result object.
+        $object['enable'] = boolval($object['enable']);
+        $object['sendemail'] = boolval($object['sendemail']);
 
         return $object;
     }
@@ -105,20 +120,28 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
             "type"       : "object",
             "properties" : {
                 "uuid"       : { '.$GLOBALS['OMV_JSONSCHEMA_UUID_UNDEFINED'].' },
+                "enable"     : { "type" : "boolean" },
+                "sendemail"  : { "type" : "boolean" },
                 "period"     : { "type" : "string" },
                 "delay"      : { "type" : "integer" },
                 "identifier" : { "type" : "string" },
-                "command"    : { "type" : "string" }
+                "username"   : { "type" : "string" },
+                "command"    : { "type" : "string" },
+                "comment"    : { "type" : "string" }
             }
         }');
 
         // Prepare the configuration object.
         $object = array(
             "uuid"       => ($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) ? OMVUtil::uuid() : $params['uuid'],
+            "enable"     => array_boolval($params, 'enable'),
+            "sendemail"  => array_boolval($params, 'sendemail'),
             "period"     => $params['period'],
             "delay"      => $params['delay'],
             "identifier" => $params['identifier'],
-            "command"    => $params['command']
+            "username"   => $params['username'],
+            "command"    => $params['command'],
+            "comment"    => $params['comment']
         );
 
         // Set the configuration object.
@@ -173,8 +196,16 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
 
         // Get list of files in /var/lib/anacron
-        $objects = array_diff(scandir("/var/lib/anacron"), array("..", "."));
-        
+        $objects1 = array_diff(scandir("/var/lib/anacron"), array("..", "."));
+        foreach ($objects1 as &$value)
+            $value = "/var/lib/anacron/" . $value;
+
+        $objects2 = array_diff(scandir("/usr/local/bin"), array("..", ".", "installbackports", "fixmodule"));
+        foreach ($objects2 as &$value)
+            $value = "/usr/local/bin/" . $value;
+
+        $objects = sort(array_merge($objects1, $objects2));
+
         $result = array();
         foreach($objects as $row) {
             // Prepare result object.
@@ -184,7 +215,7 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
 
             $result[] = $object;
         }
-        
+
         return $result;
     }
 
@@ -201,6 +232,13 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
             }
         }');
 
+        if ( !file_exists("/var/lib/anacron") )
+            if ( !mkdir("/var/lib/anacron", 0755) ) {
+                throw new OMVException(OMVErrorMsg::E_MISC_FAILURE,
+                    "Failed to make script directory '/var/lib/anacron/'.");
+            }
+        }
+
         // Move file to /var/lib/anacron.
         if(!rename($params['filepath'], sprintf("/var/lib/anacron/%s", $params['filename']))) {
             throw new OMVException(OMVErrorMsg::E_MISC_FAILURE, sprintf(
@@ -210,6 +248,49 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         if( !chmod( sprintf("/var/lib/anacron/%s", $params['filename']), 0755) ) {
             throw new OMVException(OMVErrorMsg::E_MISC_FAILURE, sprintf(
                 "Failed to make script executable - '%s'", $params['filename']));
+        }
+    }
+
+    public function doExecute($params, $context) {
+        global $xmlConfig;
+
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
+
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, '{
+            "type"       : "object",
+            "properties" : {
+                "uuid" : { '.$GLOBALS['OMV_JSONSCHEMA_UUID'].' }
+            }
+        }');
+
+        // Create a background process.
+        $bgStatusFilename = $this->createBgProcStatus();
+        $pid = $this->fork();
+        if($pid > 0) { // Parent process.
+            $this->initializeBgProcStatus($bgStatusFilename, $pid);
+            return $bgStatusFilename;
+        }
+
+        // Child process.
+        try {
+            $bgOutputFilename = $this->createBgProcOutput();
+            $this->updateBgProcStatus($bgStatusFilename, "outputfilename", $bgOutputFilename);
+
+            // Get the anacron task object.
+            $object = $this->callMethod("get", array("uuid" => $params['uuid']), $context);
+
+            // Execute the cron command line in a shell.
+            $cmd = "/bin/su";
+            $cmdArgs = array("-c", $object['command'], $object['username']);
+            if(FALSE === $this->execve($cmd, $cmdArgs, $bgOutputFilename)) {
+                throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
+                    $cmd." ".implode(" ", $cmdArgs), "");
+            }
+        } catch(Exception $e) {
+            $this->finalizeBgProcStatus($bgStatusFilename, "", $e);
+            exit(1);
         }
     }
 }

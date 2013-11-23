@@ -1,5 +1,4 @@
 /**
- * This file is part of OpenMediaVault.
  *
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
  * @author    Volker Theile <volker.theile@openmediavault.org>
@@ -27,12 +26,14 @@
 // require("js/omv/data/Store.js")
 // require("js/omv/data/Model.js")
 // require("js/omv/data/proxy/Rpc.js")
+// require("js/omv/form/field/UserComboBox.js")
+// require("js/omv/window/Execute.js")
 
 /**
- * @class OMV.module.admin.service.anacron.Task
+ * @class OMV.module.admin.system.cron.Task
  * @derived OMV.workspace.window.Form
  */
-Ext.define("OMV.module.admin.service.anacron.Task", {
+Ext.define("OMV.module.admin.system.cron.Task", {
     extend   : "OMV.workspace.window.Form",
     requires : [
         "OMV.workspace.window.plugin.ConfigObject"
@@ -47,6 +48,11 @@ Ext.define("OMV.module.admin.service.anacron.Task", {
 
     getFormItems : function() {
         return [{
+            xtype: "checkbox",
+            name: "enable",
+            fieldLabel: _("Enable"),
+            checked: true
+        },{
             xtype         : "combo",
             name          : "period",
             fieldLabel    : _("Period"),
@@ -79,13 +85,18 @@ Ext.define("OMV.module.admin.service.anacron.Task", {
             fieldLabel : _("Identifier"),
             allowBlank : false
         },{
+            xtype: "usercombo",
+            name: "username",
+            fieldLabel: _("User"),
+            value: "root"
+        },{
             xtype         : "combo",
             name          : "command",
             fieldLabel    : _("Command"),
             emptyText     : _("Select a script ..."),
             allowBlank    : false,
             allowNone     : false,
-            editable      : false,
+            editable      : true,
             triggerAction : "all",
             displayField  : "script",
             valueField    : "script",
@@ -112,17 +123,33 @@ Ext.define("OMV.module.admin.service.anacron.Task", {
             }),
             plugins    : [{
                 ptype : "fieldinfo",
-                text  : _("List of scripts available.  If none listed, upload one.")
+                text  : _("List of scripts available.  If none listed, upload one or type command.")
             }]
+        },{
+            xtype: "checkbox",
+            name: "sendemail",
+            fieldLabel: _("Send email"),
+            checked: false,
+            boxLabel: _("Send command output via email"),
+            plugins: [{
+                ptype: "fieldinfo",
+                text: _("An email message with the command output (if any produced) is send to the user who performs the job.")
+            }]
+        },{
+            xtype: "textarea",
+            name: "comment",
+            fieldLabel: _("Comment"),
+            allowBlank: true,
+            vtype: "comment"
         }];
     }
 });
 
 /**
- * @class OMV.module.admin.service.anacron.Tasks
+ * @class OMV.module.admin.system.cron.Anacron
  * @derived OMV.workspace.grid.Panel
  */
-Ext.define("OMV.module.admin.service.anacron.Tasks", {
+Ext.define("OMV.module.admin.system.cron.Anacron", {
     extend   : "OMV.workspace.grid.Panel",
     requires : [
         "OMV.Rpc",
@@ -132,7 +159,7 @@ Ext.define("OMV.module.admin.service.anacron.Tasks", {
         "OMV.util.Format"
     ],
     uses     : [
-        "OMV.module.admin.service.anacron.Task"
+        "OMV.module.admin.system.cron.Task"
     ],
 
     hidePagingToolbar : false,
@@ -204,7 +231,21 @@ Ext.define("OMV.module.admin.service.anacron.Tasks", {
     getTopToolbarItems: function() {
         var me = this;
         var items = me.callParent(arguments);
+
+        // Add 'Run' button to top toolbar.
         Ext.Array.insert(items, 2, [{
+            id: me.getId() + "-run",
+            xtype: "button",
+            text: _("Run"),
+            icon: "images/play.png",
+            iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
+            handler: Ext.Function.bind(me.onRunButton, me, [ me ]),
+            scope: me,
+            disabled: true
+        }]);
+
+        // Add 'Upload' button to top toolbar
+        Ext.Array.insert(items, 4, [{
             id: me.getId() + "-upload",
             xtype: "button",
             text: _("Upload"),
@@ -218,8 +259,8 @@ Ext.define("OMV.module.admin.service.anacron.Tasks", {
 
     onAddButton: function() {
         var me = this;
-        Ext.create("OMV.module.admin.service.anacron.Task", {
-            title: _("Add task"),
+        Ext.create("OMV.module.admin.system.cron.Task", {
+            title: _("Add anacron task"),
             uuid: OMV.UUID_UNDEFINED,
             listeners: {
                 scope: me,
@@ -230,11 +271,24 @@ Ext.define("OMV.module.admin.service.anacron.Tasks", {
         }).show();
     },
 
+    onSelectionChange: function(model, records) {
+        var me = this;
+        me.callParent(arguments);
+        // Process additional buttons.
+        var tbarRunCtrl = me.queryById(me.getId() + "-run");
+        if(records.length <= 0)
+            tbarRunCtrl.disable();
+        else if(records.length == 1)
+            tbarRunCtrl.enable();
+        else
+            tbarRunCtrl.disable();
+    },
+
     onEditButton: function() {
         var me = this;
         var record = me.getSelected();
-        Ext.create("OMV.module.admin.service.anacron.Task", {
-            title: _("Edit task"),
+        Ext.create("OMV.module.admin.system.cron.Task", {
+            title: _("Edit anacron task"),
             uuid: record.get("uuid"),
             listeners: {
                 scope: me,
@@ -260,10 +314,29 @@ Ext.define("OMV.module.admin.service.anacron.Tasks", {
         });
     },
 
+    onRunButton: function() {
+        var me = this;
+        var record = me.getSelected();
+        Ext.create("OMV.window.Execute", {
+            title: _("Execute anacron task"),
+            rpcService: "Anacron",
+            rpcMethod: "doExecute",
+            rpcParams: {
+                uuid: record.get("uuid")
+            },
+            listeners: {
+                scope: me,
+                exception: function(wnd, error) {
+                    OMV.MessageBox.error(null, error);
+                }
+            }
+        }).show();
+    },
+
     onUploadButton: function() {
         var me = this;
         Ext.create("OMV.window.Upload", {
-            title: _("Upload script"),
+            title: _("Upload anacron script"),
             service: "Anacron",
             method: "doUpload",
             listeners: {
@@ -278,9 +351,9 @@ Ext.define("OMV.module.admin.service.anacron.Tasks", {
 });
 
 OMV.WorkspaceManager.registerPanel({
-    id: "tasks",
-    path: "/service/anacron",
-    text: _("Tasks"),
-    position: 10,
-    className: "OMV.module.admin.service.anacron.Tasks"
+    id: "anacron",
+    path: "/system/cron",
+    text: _("Anacron"),
+    position: 20,
+    className: "OMV.module.admin.system.cron.Anacron"
 });

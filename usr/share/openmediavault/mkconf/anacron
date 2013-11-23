@@ -47,18 +47,28 @@ EOF
 # Add anacron tasks
 # format:
 #   period        delay  job-identifier  command
-#   @period_name  delay  job-identify    command
+#   @period_name  delay  job-identifier  command
 
 count=$(omv_config_get_count "//services/anacron/task")
 index=1
 while [ ${index} -le ${count} ]; do
 
-    period=$(omv_config_get "//services/anacron/task[position()=${index}]/period")
-    delay=$(omv_config_get "//services/anacron/task[position()=${index}]/delay")
-    identifier=$(omv_config_get "//services/anacron/task[position()=${index}]/identifier")
-    command=$(omv_config_get "//services/anacron/task[position()=${index}]/command")
+    if [ `$(omv_config_get "//services/anacron/task[position()=${index}]/enable")` = "1" ]; then
+        period=$(omv_config_get "//services/anacron/task[position()=${index}]/period")
+        delay=$(omv_config_get "//services/anacron/task[position()=${index}]/delay")
+        identifier=$(omv_config_get "//services/anacron/task[position()=${index}]/identifier")
+        username=$(omv_config_get "//services/anacron/task[position()=${index}]/username)
+        command=$(omv_config_get "//services/anacron/task[position()=${index}]/command")
+        comment=$(omv_config_get "//services/anacron/task[position()=${index}]/comment")
 
-    echo "${period}\t${delay}\t${identifier}\t/var/lib/anacron/${command}" >> ${ANACRON_CONFIG}
+        if [ `$(omv_config_get "//services/anacron/task[position()=${index}]/sendemail")` = "1" ]; then
+            command2 = "${command} | mail -s \"Anacron - ',translate(comment,'',' '),'\" -a \"From: Anacron Daemon <',username,'>\" ',username,' >/dev/null 2>&1"
+        else
+            command2 = "${command} >/dev/null 2>&1"
+        fi
+
+        echo "${period}\t${delay}\t${identifier}\t${command2}" >> ${ANACRON_CONFIG}
+    fi
 
     index=$(( ${index} + 1 ))
 done
