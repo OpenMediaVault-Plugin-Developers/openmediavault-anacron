@@ -23,10 +23,6 @@ set -e
 ANACRON_CONFIG="/etc/anacrontab"
 ANACRON_SCRIPT_DIR="/var/lib/anacron/"
 
-if [ -d "${ANACRON_SCRIPT_DIR}" ]; then
-    mkdir -p ${ANACRON_SCRIPT_DIR}
-fi
-
 # Create anacron config file
 cat <<EOF > ${ANACRON_CONFIG}
 # /etc/anacrontab: configuration file for anacron
@@ -53,18 +49,20 @@ count=$(omv_config_get_count "//services/anacron/task")
 index=1
 while [ ${index} -le ${count} ]; do
 
-    if [ `$(omv_config_get "//services/anacron/task[position()=${index}]/enable")` = "1" ]; then
+    enable=$(omv_config_get "//services/anacron/task[position()=${index}]/enable")
+    
+    if [ 1 = ${enable} ]; then
         period=$(omv_config_get "//services/anacron/task[position()=${index}]/period")
         delay=$(omv_config_get "//services/anacron/task[position()=${index}]/delay")
         identifier=$(omv_config_get "//services/anacron/task[position()=${index}]/identifier")
-        username=$(omv_config_get "//services/anacron/task[position()=${index}]/username)
+        username=$(omv_config_get "//services/anacron/task[position()=${index}]/username")
         command=$(omv_config_get "//services/anacron/task[position()=${index}]/command")
         comment=$(omv_config_get "//services/anacron/task[position()=${index}]/comment")
 
         if [ `$(omv_config_get "//services/anacron/task[position()=${index}]/sendemail")` = "1" ]; then
-            command2 = "${command} | mail -s \"Anacron - ',translate(comment,'',' '),'\" -a \"From: Anacron Daemon <',username,'>\" ',username,' >/dev/null 2>&1"
+            command2="${command} \| mail -s \"Anacron - ${comment}\" -a \"From: Anacron Daemon <${username}>\" ${username} >/dev/null 2>&1"
         else
-            command2 = "${command} >/dev/null 2>&1"
+            command2="${command}"
         fi
 
         echo "${period}\t${delay}\t${identifier}\t${command2}" >> ${ANACRON_CONFIG}

@@ -195,16 +195,21 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         // Validate the RPC caller context.
         $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
 
+        $objects = array();
+        
         // Get list of files in /var/lib/anacron
         $objects1 = array_diff(scandir("/var/lib/anacron"), array("..", "."));
         foreach ($objects1 as &$value)
             $value = "/var/lib/anacron/" . $value;
 
-        $objects2 = array_diff(scandir("/usr/local/bin"), array("..", ".", "installbackports", "fixmodule"));
+        // Get list of files in /usr/local/bin
+        $objects2 = array_diff(scandir("/usr/local/bin"), array("..", ".", 
+            "installbackports", "omv-support-libs", "omv-support.sh", 
+            "snapraid", "upssched-cmd", "youtube-dl", "fixmodule"));
         foreach ($objects2 as &$value)
             $value = "/usr/local/bin/" . $value;
 
-        $objects = sort(array_merge($objects1, $objects2));
+        $objects = array_merge($objects1, $objects2);
 
         $result = array();
         foreach($objects as $row) {
@@ -232,10 +237,9 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
             }
         }');
 
-        if ( !file_exists("/var/lib/anacron") )
+        if ( !file_exists("/var/lib/anacron") ) {
             if ( !mkdir("/var/lib/anacron", 0755) ) {
-                throw new OMVException(OMVErrorMsg::E_MISC_FAILURE,
-                    "Failed to make script directory '/var/lib/anacron/'.");
+                throw new OMVException(OMVErrorMsg::E_MISC_FAILURE, "Failed to make script directory '/var/lib/anacron/'.");
             }
         }
 

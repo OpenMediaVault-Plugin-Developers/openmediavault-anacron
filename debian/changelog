@@ -1,3 +1,14 @@
+openmediavault-anacron (0.5.1) stable; urgency=low
+
+  * Add enable
+  * Add send email
+  * Add comment
+  * Add editable command field that shows files from /var/lib/anacron and /usr/local/bin
+  * Moved to cron tab as second tab
+  * Add run button to run task as user specified
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 23 Nov 2013 15:40:27 -0500
+
 openmediavault-anacron (0.5) stable; urgency=low
 
   * Initial release

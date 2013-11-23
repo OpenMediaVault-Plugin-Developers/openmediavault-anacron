@@ -156,7 +156,8 @@ Ext.define("OMV.module.admin.system.cron.Anacron", {
         "OMV.data.Store",
         "OMV.data.Model",
         "OMV.data.proxy.Rpc",
-        "OMV.util.Format"
+        "OMV.util.Format",
+        "OMV.window.Execute"
     ],
     uses     : [
         "OMV.module.admin.system.cron.Task"
@@ -166,6 +167,17 @@ Ext.define("OMV.module.admin.system.cron.Anacron", {
     stateful          : true,
     stateId           : "a982a76d-6804-4632-b31b-8b48c0ea6dde",
     columns           : [{
+        xtype: "booleaniconcolumn",
+        text: _("Enabled"),
+        sortable: true,
+        dataIndex: "enable",
+        stateId: "enable",
+        align: "center",
+        width: 80,
+        resizable: false,
+        trueIcon: "switch_on.png",
+        falseIcon: "switch_off.png"
+    },{
         text      : _("Period"),
         sortable  : true,
         dataIndex : "period",
@@ -195,10 +207,20 @@ Ext.define("OMV.module.admin.system.cron.Anacron", {
         dataIndex : "identifier",
         stateId   : "identifier"
     },{
+        text: _("User"),
+        sortable: true,
+        dataIndex: "username",
+        stateId: "username"
+    },{
         text      : _("Command"),
         sortable  : true,
         dataIndex : "command",
         stateId   : "command"
+    },{
+        text: _("Comment"),
+        sortable: true,
+        dataIndex: "comment",
+        stateId: "comment"
     }],
 
     initComponent : function() {
@@ -210,10 +232,14 @@ Ext.define("OMV.module.admin.system.cron.Anacron", {
                     idProperty : "uuid",
                     fields     : [
                         { name  : "uuid", type: "string" },
+                        { name  : "enable", type: "boolean" },
                         { name  : "period", type: "string" },
                         { name  : "delay", type: "integer" },
                         { name  : "identifier", type: "string" },
-                        { name  : "command", type: "string" }
+                        { name  : "username", type: "string" },
+                        { name  : "command", type: "string" },
+                        { name  : "sendemail", type: "boolean" },
+                        { name  : "comment", type: "string" }
                     ]
                 }),
                 proxy    : {
