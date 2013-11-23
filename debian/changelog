@@ -1,3 +1,9 @@
+openmediavault-anacron (0.5.3) stable; urgency=low
+
+  * Fix run bug
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 23 Nov 2013 15:56:27 -0500
+
 openmediavault-anacron (0.5.2) stable; urgency=low
 
   * Replace space with underscore in identifier

@@ -283,7 +283,7 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
             $this->updateBgProcStatus($bgStatusFilename, "outputfilename", $bgOutputFilename);
 
             // Get the anacron task object.
-            $object = $this->callMethod("get", array("uuid" => $params['uuid']), $context);
+            $object = $this->callMethod("getTask", array("uuid" => $params['uuid']), $context);
 
             // Execute the cron command line in a shell.
             $cmd = "/bin/su";
