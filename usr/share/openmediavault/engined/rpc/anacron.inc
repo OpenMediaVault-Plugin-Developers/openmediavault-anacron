@@ -138,7 +138,7 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
             "sendemail"  => array_boolval($params, 'sendemail'),
             "period"     => $params['period'],
             "delay"      => $params['delay'],
-            "identifier" => $params['identifier'],
+            "identifier" => str_replace(" ", "_", $params['identifier']),
             "username"   => $params['username'],
             "command"    => $params['command'],
             "comment"    => $params['comment']
