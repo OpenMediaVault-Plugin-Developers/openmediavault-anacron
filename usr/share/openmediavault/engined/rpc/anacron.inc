@@ -196,16 +196,17 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
 
         $objects = array();
-        
+
         // Get list of files in /var/lib/anacron
         $objects1 = array_diff(scandir("/var/lib/anacron"), array("..", "."));
         foreach ($objects1 as &$value)
             $value = "/var/lib/anacron/" . $value;
 
         // Get list of files in /usr/local/bin
-        $objects2 = array_diff(scandir("/usr/local/bin"), array("..", ".", 
-            "installbackports", "omv-support-libs", "omv-support.sh", 
-            "snapraid", "upssched-cmd", "youtube-dl", "fixmodule"));
+        $objects2 = array_diff(scandir("/usr/local/bin"), array("..", ".",
+            "installbackports", "omv-support-libs", "omv-support.sh",
+            "snapraid", "upssched-cmd", "youtube-dl", "fixmodule",
+            "create_greyhole_db"));
         foreach ($objects2 as &$value)
             $value = "/usr/local/bin/" . $value;
 
