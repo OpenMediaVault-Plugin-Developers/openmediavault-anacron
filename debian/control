@@ -7,5 +7,5 @@ Standards-Version: 3.9.3
 
 Package: openmediavault-anacron
 Architecture: all
-Depends: openmediavault (>= 0.5.14), anacron
+Depends: openmediavault (>= 0.5.14), openmediavault (<< 0.6), anacron
 Description: anacron plugin for OpenMediaVault.
