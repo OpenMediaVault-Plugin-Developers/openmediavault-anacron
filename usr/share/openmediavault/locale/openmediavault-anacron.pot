@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-anacron\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-12 07:12-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Add anacron task"
+msgstr ""
+
+msgid "An email message with the command output (if any produced) is send to the user who performs the job."
+msgstr ""
+
+msgid "Anacron"
+msgstr ""
+
+msgid "Command"
+msgstr ""
+
+msgid "Comment"
+msgstr ""
+
+msgid "Delay"
+msgstr ""
+
+msgid "Delay time in minutes"
+msgstr ""
+
+msgid "Edit anacron task"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Execute anacron task"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid "List of scripts available.  If none listed, upload one or type command."
+msgstr ""
+
+msgid "Period"
+msgstr ""
+
+msgid "Run"
+msgstr ""
+
+msgid "Select a script ..."
+msgstr ""
+
+msgid "Send command output via email"
+msgstr ""
+
+msgid "Send email"
+msgstr ""
+
+msgid "Upload"
+msgstr ""
+
+msgid "Upload anacron script"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "daily"
+msgstr ""
+
+msgid "monthly"
+msgstr ""
+
+msgid "weekly"
+msgstr ""
