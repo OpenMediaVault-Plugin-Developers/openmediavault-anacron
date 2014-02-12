@@ -1,3 +1,9 @@
+openmediavault-anacron (0.6.0) stable; urgency=low
+
+  * initial port to Kralizec
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 12 Feb 2014 07:04:27 -0500
+
 openmediavault-anacron (0.5.3) stable; urgency=low
 
   * Fix run bug

@@ -2,10 +2,11 @@ Source: openmediavault-anacron
 Section: net
 Priority: optional
 Maintainer: OpenMediaVault Plugin Developers <plugins@omv-extras.org>
-Build-Depends: debhelper (>= 8.0.0)
+Build-Depends: debhelper (>= 9.0.0)
 Standards-Version: 3.9.3
+Homepage: http://omv-extras.org/
 
 Package: openmediavault-anacron
 Architecture: all
-Depends: openmediavault (>= 0.5.14), openmediavault (<< 0.6), anacron
+Depends: openmediavault (>= 0.6), anacron
 Description: anacron plugin for OpenMediaVault.

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (C)      2013 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2014 OpenMediaVault Plugin Developers
  * Copyright (C) 2009-2013 Volker Theile <volker.theile@openmediavault.org>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -70,7 +70,7 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         $jobs = array();
         foreach($objects as $objectk => $objectv) {
             // Modify result data.
-            $objectv['enable'] = boolval($objectv['enable']);
+            $objectv['enable']    = boolval($objectv['enable']);
             $objectv['sendemail'] = boolval($objectv['sendemail']);
 
             $jobs[] = $objectv;
@@ -103,7 +103,7 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
             throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
 
         // Modify the result object.
-        $object['enable'] = boolval($object['enable']);
+        $object['enable']    = boolval($object['enable']);
         $object['sendemail'] = boolval($object['sendemail']);
 
         return $object;
@@ -206,7 +206,7 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         $objects2 = array_diff(scandir("/usr/local/bin"), array("..", ".",
             "installbackports", "omv-support-libs", "omv-support.sh",
             "snapraid", "upssched-cmd", "youtube-dl", "fixmodule",
-            "create_greyhole_db"));
+            "create_greyhole_db", "installsystemd"));
         foreach ($objects2 as &$value)
             $value = "/usr/local/bin/" . $value;
 

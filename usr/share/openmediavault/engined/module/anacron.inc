@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C)      2013 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2014 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ class OMVModuleAnacron extends OMVModuleServiceAbstract implements OMVINotifyLis
             OMV_NOTIFY_MODIFY,
             "org.openmediavault.services.anacron",
             array($this, "setDirty"));
-    
+
         $dispatcher->addListener(
             OMV_NOTIFY_CREATE | OMV_NOTIFY_MODIFY | OMV_NOTIFY_DELETE,
             "org.openmediavault.services.anacron.task",
