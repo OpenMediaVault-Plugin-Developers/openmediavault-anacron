@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Copyright (C) 2013-2014 OpenMediaVault Plugin Developers
 #
@@ -22,35 +22,23 @@ set -e
 
 ANACRON_CONFIG="/etc/anacrontab"
 ANACRON_SCRIPT_DIR="/var/lib/anacron/"
-
-# Create anacron config file
-cat <<EOF > ${ANACRON_CONFIG}
-# /etc/anacrontab: configuration file for anacron
-
-# See anacron(8) and anacrontab(5) for details.
-
-SHELL=/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-
-# These replace cron's entries
-1       5       cron.daily       nice run-parts --report /etc/cron.daily
-7       10      cron.weekly      nice run-parts --report /etc/cron.weekly
-@monthly        15      cron.monthly nice run-parts --report /etc/cron.monthly
-
-# added by plugin
-EOF
+ANACRON_SECTIONNAME="omvanacron"
 
 # Add anacron tasks
 # format:
 #   period        delay  job-identifier  command
 #   @period_name  delay  job-identifier  command
 
+anacronent=$(
+
+echo -n "# >>> [${ANACRON_SECTIONNAME}]\n";
+
 count=$(omv_config_get_count "//services/anacron/task")
 index=1
 while [ ${index} -le ${count} ]; do
 
     enable=$(omv_config_get "//services/anacron/task[position()=${index}]/enable")
-    
+
     if [ 1 = ${enable} ]; then
         period=$(omv_config_get "//services/anacron/task[position()=${index}]/period")
         delay=$(omv_config_get "//services/anacron/task[position()=${index}]/delay")
@@ -65,8 +53,17 @@ while [ ${index} -le ${count} ]; do
             command2="${command}"
         fi
 
-        echo "${period}\t${delay}\t${identifier}\t${command2}" >> ${ANACRON_CONFIG}
+        echo -n "${period}\t${delay}\t${identifier}\t${command2}\n"
     fi
 
     index=$(( ${index} + 1 ))
 done
+
+echo -n "# <<< [${ANACRON_SECTIONNAME}]")
+
+# Append anacron entries if not still present or replace existing entries.
+if ! grep -E "^# >>> \[${ANACRON_SECTIONNAME}\]\s*$" ${ANACRON_CONFIG} >/dev/null; then
+    echo -e "${anacronent}" >> ${ANACRON_CONFIG}
+else
+    sed -i "/# >>> \[${ANACRON_SECTIONNAME}\]/,/# <<< \[${ANACRON_SECTIONNAME}\]/ c ${anacronent}" ${ANACRON_CONFIG}
+fi
