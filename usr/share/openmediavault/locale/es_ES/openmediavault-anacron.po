@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Raul Fernandez Garcia <raulfg3@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-anacron\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-12 07:12-0600\n"
+"PO-Revision-Date: 2014-02-17 16:28+0000\n"
+"Last-Translator: Raul Fernandez Garcia <raulfg3@gmail.com>\n"
+"Language-Team: Spanish (Spain) (http://www.transifex.com/projects/p/openmediavault-anacron/language/es_ES/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Add anacron task"
+msgstr "Añadir una tarea a anacron"
+
+msgid ""
+"An email message with the command output (if any produced) is send to the "
+"user who performs the job."
+msgstr "Un email con la salida del comando (si hay alguna), ha sido enviado al usuario dueño del trabajo de anacron"
+
+msgid "Anacron"
+msgstr "Anacron"
+
+msgid "Command"
+msgstr "Comando"
+
+msgid "Comment"
+msgstr "Comentario"
+
+msgid "Delay"
+msgstr "Retraso"
+
+msgid "Delay time in minutes"
+msgstr "Retraso en minutos"
+
+msgid "Edit anacron task"
+msgstr "Editar una tarea anacron"
+
+msgid "Enable"
+msgstr "Habilitar"
+
+msgid "Enabled"
+msgstr "Habilitado"
+
+msgid "Execute anacron task"
+msgstr "Ejecutar una tarea anacron"
+
+msgid "Identifier"
+msgstr "Identificador"
+
+msgid ""
+"List of scripts available.  If none listed, upload one or type command."
+msgstr "Listado de script disponibles. Si no hay ninguno, suba uno o teclee el comando."
+
+msgid "Period"
+msgstr "Periodo"
+
+msgid "Run"
+msgstr "Ejecutar"
+
+msgid "Select a script ..."
+msgstr "Seleccionar un script..."
+
+msgid "Send command output via email"
+msgstr "Enviar salida del comando por email"
+
+msgid "Send email"
+msgstr "Enviar email"
+
+msgid "Upload"
+msgstr "Subida"
+
+msgid "Upload anacron script"
+msgstr "Subir un script anacron"
+
+msgid "User"
+msgstr "Usuario"
+
+msgid "daily"
+msgstr "diariamente"
+
+msgid "monthly"
+msgstr "mensualmente"
+
+msgid "weekly"
+msgstr "semanalmente"

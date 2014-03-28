@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Paolo Velati <paolo.velati@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-anacron\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-12 07:12-0600\n"
+"PO-Revision-Date: 2014-02-19 17:09+0000\n"
+"Last-Translator: Paolo Velati <paolo.velati@gmail.com>\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/openmediavault-anacron/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Add anacron task"
+msgstr "Aggiungi attività anacron"
+
+msgid ""
+"An email message with the command output (if any produced) is send to the "
+"user who performs the job."
+msgstr "Un messaggio email con l'output del comando (se prodotto) è inviato all'utente che esegue il processo."
+
+msgid "Anacron"
+msgstr "Anacron"
+
+msgid "Command"
+msgstr "Comando"
+
+msgid "Comment"
+msgstr "Commento"
+
+msgid "Delay"
+msgstr "Ritardo"
+
+msgid "Delay time in minutes"
+msgstr "Ritardo in minuti"
+
+msgid "Edit anacron task"
+msgstr "Modifica attività anacron"
+
+msgid "Enable"
+msgstr "Abilita"
+
+msgid "Enabled"
+msgstr "Abilitato"
+
+msgid "Execute anacron task"
+msgstr "Esegui attività anacron"
+
+msgid "Identifier"
+msgstr "Identificatore"
+
+msgid ""
+"List of scripts available.  If none listed, upload one or type command."
+msgstr "Elenco di script disponibili. Se non ce ne sono, caricane uno o inserisci un comando."
+
+msgid "Period"
+msgstr "Periodo"
+
+msgid "Run"
+msgstr "Esegui"
+
+msgid "Select a script ..."
+msgstr "Seleziona uno script ..."
+
+msgid "Send command output via email"
+msgstr "Invia output comando via email"
+
+msgid "Send email"
+msgstr "Invia email"
+
+msgid "Upload"
+msgstr "Carica"
+
+msgid "Upload anacron script"
+msgstr "Carica script anacron"
+
+msgid "User"
+msgstr "Utente"
+
+msgid "daily"
+msgstr "giornaliero"
+
+msgid "monthly"
+msgstr "mensile"
+
+msgid "weekly"
+msgstr "settimanale"

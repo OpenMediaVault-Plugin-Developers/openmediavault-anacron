@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-anacron\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-12 07:12-0600\n"
+"PO-Revision-Date: 2014-02-20 06:01+0000\n"
+"Last-Translator: kansuke <kansuke4649@gmail.com>\n"
+"Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/openmediavault-anacron/language/ja_JP/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Add anacron task"
+msgstr "anacronタスクの追加"
+
+msgid ""
+"An email message with the command output (if any produced) is send to the "
+"user who performs the job."
+msgstr "コマンドの出力（もしあれば）の電子メールメッセージは、ジョブを実行するユーザーに送られます。"
+
+msgid "Anacron"
+msgstr "Anacron"
+
+msgid "Command"
+msgstr "コマンド"
+
+msgid "Comment"
+msgstr "コメント"
+
+msgid "Delay"
+msgstr "遅延"
+
+msgid "Delay time in minutes"
+msgstr "分単位の遅延時間"
+
+msgid "Edit anacron task"
+msgstr "anacronタスクの編集"
+
+msgid "Enable"
+msgstr "有効"
+
+msgid "Enabled"
+msgstr "有効化済み"
+
+msgid "Execute anacron task"
+msgstr "anacronタスクの実行"
+
+msgid "Identifier"
+msgstr "識別子"
+
+msgid ""
+"List of scripts available.  If none listed, upload one or type command."
+msgstr "利用可能なスクリプトのリスト。何も表示されない場合はスクリプトをアップロードするか、コマンドを入力してください。"
+
+msgid "Period"
+msgstr "期間"
+
+msgid "Run"
+msgstr "実行"
+
+msgid "Select a script ..."
+msgstr "スクリプトの選択 ..."
+
+msgid "Send command output via email"
+msgstr "コマンドの出力を電子メールで送信"
+
+msgid "Send email"
+msgstr "電子メールの送信"
+
+msgid "Upload"
+msgstr "アップロード"
+
+msgid "Upload anacron script"
+msgstr "anacronスクリプトのアップロード"
+
+msgid "User"
+msgstr "ユーザー"
+
+msgid "daily"
+msgstr "毎日"
+
+msgid "monthly"
+msgstr "毎月"
+
+msgid "weekly"
+msgstr "毎週"
