@@ -1,3 +1,10 @@
+openmediavault-anacron (0.6.1) stable; urgency=low
+
+  * Modify config instead of rewriting
+  * Update locales
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 28 Mar 2014 08:08:27 -0500
+
 openmediavault-anacron (0.6.0) stable; urgency=low
 
   * initial port to Kralizec
