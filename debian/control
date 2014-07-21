@@ -8,5 +8,5 @@ Homepage: http://omv-extras.org/
 
 Package: openmediavault-anacron
 Architecture: all
-Depends: openmediavault (>= 0.6), anacron
+Depends: openmediavault (>= 1.0.7), anacron
 Description: anacron plugin for OpenMediaVault.
