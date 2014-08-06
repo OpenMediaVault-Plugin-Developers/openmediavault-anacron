@@ -1,3 +1,9 @@
+openmediavault-anacron (1.0.1) UNRELEASED; urgency=low
+
+  * Minor updates
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 06 Aug 2014 07:39:21 -0500
+
 openmediavault-anacron (1.0) stable; urgency=low
 
   * Simplify grid toolbar 'selectionchange' event processing. (OMV svn r1327)
