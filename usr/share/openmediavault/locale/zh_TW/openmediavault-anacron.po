@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Alexander Savchenko, 2014
+# kochin <kochinc@outlook.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
@@ -11,84 +11,84 @@ msgstr ""
 "POT-Creation-Date: 2014-02-12 07:12-0600\n"
 "PO-Revision-Date: 2014-12-04 14:17+0000\n"
 "Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/openmediavault-anacron/language/ru/)\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/openmediavault-anacron/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Add anacron task"
-msgstr ""
+msgstr "新增 anacron 工作"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
 "user who performs the job."
-msgstr ""
+msgstr "一封含有指令輸出(如有產生)的電子信件會被送給執行該指令的用戶。"
 
 msgid "Anacron"
-msgstr ""
+msgstr "Anacron"
 
 msgid "Command"
-msgstr "Комманда"
+msgstr "指令"
 
 msgid "Comment"
-msgstr "Комментарий"
+msgstr "註釋"
 
 msgid "Delay"
-msgstr ""
+msgstr "延遲"
 
 msgid "Delay time in minutes"
-msgstr ""
+msgstr "延遲時間，以分鐘為單位"
 
 msgid "Edit anacron task"
-msgstr ""
+msgstr "編輯 anacron 工作"
 
 msgid "Enable"
-msgstr "Включить"
+msgstr "啟用"
 
 msgid "Enabled"
-msgstr ""
+msgstr "已啟用"
 
 msgid "Execute anacron task"
-msgstr ""
+msgstr "執行 anacron 工作"
 
 msgid "Identifier"
-msgstr ""
+msgstr "識別名稱"
 
 msgid ""
 "List of scripts available.  If none listed, upload one or type command."
-msgstr ""
+msgstr "可用腳本程式列表。若無任何列出，可上傳一份或鍵入指令。"
 
 msgid "Period"
-msgstr ""
+msgstr "週期"
 
 msgid "Run"
-msgstr ""
+msgstr "執行"
 
 msgid "Select a script ..."
-msgstr ""
+msgstr "選擇一份腳本程式 ..."
 
 msgid "Send command output via email"
-msgstr ""
+msgstr "經由電子郵件發送指令的輸出"
 
 msgid "Send email"
-msgstr ""
+msgstr "發送電子郵件"
 
 msgid "Upload"
-msgstr "Загрузить"
+msgstr "上傳"
 
 msgid "Upload anacron script"
-msgstr ""
+msgstr "上傳 anacron 腳本程式"
 
 msgid "User"
-msgstr "Пользователь"
+msgstr "用戶"
 
 msgid "daily"
-msgstr "ежедневно"
+msgstr "每日"
 
 msgid "monthly"
-msgstr "ежемесячно"
+msgstr "每月"
 
 msgid "weekly"
-msgstr "еженедельно"
+msgstr "每週"

@@ -1,8 +1,10 @@
-openmediavault-anacron (1.0.1) UNRELEASED; urgency=low
+openmediavault-anacron (1.0.1) stable; urgency=low
 
   * Minor updates
+  * Add custom debian/control field XB-Plugin-Section
+  * Update locales
 
- -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 06 Aug 2014 07:39:21 -0500
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 12 Dec 2014 06:10:38 -0600
 
 openmediavault-anacron (1.0) stable; urgency=low
 
