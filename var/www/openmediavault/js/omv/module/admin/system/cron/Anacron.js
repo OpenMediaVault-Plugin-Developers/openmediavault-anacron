@@ -219,6 +219,17 @@ Ext.define("OMV.module.admin.system.cron.Anacron", {
         dataIndex : "command",
         stateId   : "command"
     },{
+        xtype     : "booleaniconcolumn",
+        text      : _("Send Email"),
+        sortable  : true,
+        dataIndex : "sendemail",
+        stateId   : "sendemail",
+        align     : "center",
+        width     : 80,
+        resizable : false,
+        trueIcon  : "switch_on.png",
+        falseIcon : "switch_off.png"
+    },{
         text      : _("Comment"),
         sortable  : true,
         dataIndex : "comment",

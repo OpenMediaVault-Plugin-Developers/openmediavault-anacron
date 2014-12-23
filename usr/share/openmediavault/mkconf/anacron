@@ -46,8 +46,9 @@ while [ ${index} -le ${count} ]; do
         username=$(omv_config_get "//services/anacron/task[position()=${index}]/username")
         command=$(omv_config_get "//services/anacron/task[position()=${index}]/command")
         comment=$(omv_config_get "//services/anacron/task[position()=${index}]/comment")
-
-        if [ `$(omv_config_get "//services/anacron/task[position()=${index}]/sendemail")` = "1" ]; then
+        sendemail=$(omv_config_get "//services/anacron/task[position()=${index}]/sendemail")
+        
+        if [ "${sendemail}" = "1" ]; then
             command2="${command} \| mail -s \"Anacron - ${comment}\" -a \"From: Anacron Daemon <${username}>\" ${username} >/dev/null 2>&1"
         else
             command2="${command}"
