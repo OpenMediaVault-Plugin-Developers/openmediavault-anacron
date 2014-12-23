@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-12 07:12-0600\n"
+"POT-Creation-Date: 2014-12-23 06:49-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,6 +63,9 @@ msgid "Run"
 msgstr ""
 
 msgid "Select a script ..."
+msgstr ""
+
+msgid "Send Email"
 msgstr ""
 
 msgid "Send command output via email"
