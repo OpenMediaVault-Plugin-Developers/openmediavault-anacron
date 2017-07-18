@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
+class OMVRpcServiceAnacron extends \OMV\Rpc\ServiceAbstract {
 
     public function getName()
     {
@@ -145,15 +145,6 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, "rpc.anacron.doupload");
-
-        // Prepare the configuration object.
-        $object = new \OMV\Config\ConfigObject("conf.service.anacron.task");
-        $db = \OMV\Config\Database::getInstance();
-        $object->setAssoc($params);
-        // Set the configuration object.
-        $db->set($object);
-        // Return the configuration object.
-        return $object->getAssoc();
 
         if ( !file_exists("/var/lib/anacron") ) {
             if ( !mkdir("/var/lib/anacron", 0755) ) {

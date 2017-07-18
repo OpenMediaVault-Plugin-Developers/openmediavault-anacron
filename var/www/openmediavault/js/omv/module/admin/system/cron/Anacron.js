@@ -259,7 +259,7 @@ Ext.define("OMV.module.admin.system.cron.Anacron", {
                     type    : "rpc",
                     rpcData : {
                         service : "Anacron",
-                        method  : "getTasks"
+                        method  : "getTaskList"
                     }
                 }
             })
