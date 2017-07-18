@@ -57,7 +57,7 @@ class OMVRpcServiceAnacron extends \OMV\Rpc\ServiceAbstract {
         $this->validateMethodParams($params, "rpc.common.objectuuid");
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        return $db->getAssoc("conf.service.anacron.drive", $params['uuid']);
+        return $db->getAssoc("conf.service.anacron.task", $params['uuid']);
     }
 
     public function setTask($params, $context)
