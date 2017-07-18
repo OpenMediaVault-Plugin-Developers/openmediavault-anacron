@@ -3,7 +3,7 @@
 	"id": "conf.service.anacron.task",
 	"title": "Anacron task",
 	"queryinfo": {
-		"xpath": "//services/anacron/tasks/task",
+		"xpath": "//services/anacron/task",
 		"iterable": true,
 		"idproperty": "uuid"
 	},
@@ -25,7 +25,7 @@
 		},
 		"delay": {
 			"type": "integer",
-			"minimum": 1,
+			"minimum": 0,
 			"maximum": 1440,
 			"default": 0
 		},
