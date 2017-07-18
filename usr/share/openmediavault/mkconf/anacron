@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2013-2014 OpenMediaVault Plugin Developers
+# Copyright (C) 2013-2017 OpenMediaVault Plugin Developers
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,6 +23,11 @@ set -e
 ANACRON_CONFIG="/etc/anacrontab"
 ANACRON_SCRIPT_DIR="/var/lib/anacron/"
 ANACRON_SECTIONNAME="omvanacron"
+
+if [ ! -d "${ANACRON_SCRIPT_DIR}" ]; then
+    mkdir -p ${ANACRON_SCRIPT_DIR}
+    chmod 0755 ${ANACRON_SCRIPT_DIR}
+fi
 
 # Add anacron tasks
 # format:

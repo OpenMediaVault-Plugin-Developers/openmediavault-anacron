@@ -1,0 +1,57 @@
+{
+	"type": "config",
+	"id": "conf.service.anacron",
+	"title": "Anacron",
+	"queryinfo": {
+		"xpath": "//services/anacron",
+		"iterable": false
+	},
+	"properties": {
+		"tasks": {
+			"type": "object",
+			"properties": {
+				"task": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"uuid": {
+								"type": "string",
+								"format": "uuidv4"
+							},
+							"enable": {
+								"type": "boolean",
+								"default": 0
+							},
+							"sendemail": {
+								"type": "boolean",
+								"default": 0
+							},
+							"period": {
+								"type": "string"
+							},
+							"delay": {
+								"type": "integer",
+								"minimum": 1,
+								"maximum": 65535,
+								"default": 0
+							},
+							"identifier": {
+								"type": "string"
+							},
+							"username": {
+								"type": "string"
+							},
+							"command": {
+								"type": "string"
+							},
+							"comment": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

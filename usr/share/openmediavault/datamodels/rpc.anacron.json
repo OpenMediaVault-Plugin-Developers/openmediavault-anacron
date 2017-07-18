@@ -1,0 +1,65 @@
+[{
+	"type": "rpc",
+	"id": "rpc.anacron.settask",
+	"params": {
+		"type": "object",
+		"properties": {
+			"uuid": {
+				"type": "string",
+				"format": "uuidv4",
+				"required": true
+			},
+			"enable": {
+				"type": "boolean",
+				"required": true
+			},
+			"sendemail": {
+				"type": "boolean",
+				"required": true
+			},
+			"period": {
+				"type": "string",
+				"enum":[ "1", "7", "@monthly" ],
+				"required": true
+			},
+			"delay": {
+				"type": "integer",
+				"minimum": 1,
+				"maximum": 1440,
+				"required": true
+			},
+			"identifier": {
+				"type": "string",
+				"required": true
+			},
+			"username": {
+				"type": "string",
+				"required": true
+			},
+			"command": {
+				"type": "string",
+				"required": true
+			},
+			"comment": {
+				"type": "string",
+				"required": true
+			}
+		}
+	}
+},{
+	"type": "rpc",
+	"id": "rpc.anacron.doupload",
+	"params": {
+		"type": "object",
+		"properties": {
+			"filename": {
+				"type": "string",
+				"required": true
+			},
+			"filepath": {
+				"type": "string",
+				"required": true
+			}
+		}
+	}
+}]

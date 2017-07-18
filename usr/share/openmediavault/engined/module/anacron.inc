@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2013-2014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2017 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,13 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require_once("openmediavault/module.inc");
-require_once("openmediavault/config.inc");
-require_once("openmediavault/error.inc");
-require_once("openmediavault/util.inc");
-require_once("openmediavault/log.inc");
-
-class OMVModuleAnacron extends OMVModuleServiceAbstract implements OMVINotifyListener
+class OMVModuleAnacron extends \OMV\Engine\Module\ServiceAbstract
+    implements \OMV\Engine\Notify\IListener
 {
     public function getName()
     {
@@ -31,34 +26,22 @@ class OMVModuleAnacron extends OMVModuleServiceAbstract implements OMVINotifyLis
 
     public function applyConfig()
     {
-        $cmd = "omv-mkconf anacron 2>&1";
-
-        if (0 !== $this->exec($cmd, $output))
-        {
-            throw new OMVException(
-                OMVErrorMsg::E_EXEC_FAILED,
-                $cmd,
-                implode("\n", $output)
-            );
-        }
+        $cmd = new \OMV\System\Process('omv-mkconf', 'anacron');
+        $cmd->setRedirect2to1();
+        $cmd->execute();
     }
 
-    public function bindListeners(OMVNotifyDispatcher $dispatcher)
+    public function bindListeners(\OMV\Engine\Notify\Dispatcher $dispatcher)
     {
         $dispatcher->addListener(
             OMV_NOTIFY_MODIFY,
-            "org.openmediavault.services.anacron",
-            array($this, "setDirty")
+            'org.openmediavault.conf.service.anacron',
+            [ $this, 'setDirty' ]
         );
-
         $dispatcher->addListener(
             OMV_NOTIFY_CREATE | OMV_NOTIFY_MODIFY | OMV_NOTIFY_DELETE,
-            "org.openmediavault.services.anacron.task",
-            array($this, "setDirty")
+            "org.openmediavault.conf.service.anacron.task",
+            [ $this, "setDirty" ]
         );
     }
 }
-
-// Register module.
-$moduleMgr = &OMVModuleMgr::getInstance();
-$moduleMgr->registerModule(new OMVModuleAnacron());

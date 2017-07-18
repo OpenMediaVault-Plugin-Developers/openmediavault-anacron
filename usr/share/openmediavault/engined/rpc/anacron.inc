@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2013-2014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2017 OpenMediaVault Plugin Developers
  * Copyright (C) 2009-2013 Volker Theile <volker.theile@openmediavault.org>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,14 +17,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require_once "openmediavault/object.inc";
-require_once "openmediavault/config.inc";
-require_once "openmediavault/error.inc";
-require_once "openmediavault/util.inc";
-require_once "openmediavault/rpcservice.inc";
-require_once "openmediavault/notify.inc";
-require_once("openmediavault/system.inc");
-
 class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
 
     public function getName()
@@ -32,34 +24,9 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         return 'Anacron';
     }
 
-    private function getPluginName()
-    {
-        return strtolower( $this->getName() );
-    }
-
-    private function getXPath()
-    {
-        return sprintf( "//services/%s", $this->getPluginName() );
-    }
-
-    private function getXPathTask()
-    {
-        return sprintf( "%s/task", $this->getXPath() );
-    }
-
-    private function getEventMessagePath()
-    {
-        return sprintf( "org.openmediavault.services.%s", $this->getPluginName() );
-    }
-
-    private function getEventMessagePathTask()
-    {
-        return sprintf( "%s.task", $this->getEventMessagePath() );
-    }
-
     public function initialize()
     {
-        $this->registerMethod('getTasks');
+        $this->registerMethod('getTaskList');
         $this->registerMethod('getTask');
         $this->registerMethod('setTask');
         $this->registerMethod('deleteTask');
@@ -68,202 +35,67 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         $this->registerMethod('doExecute');
     }
 
-    public function getTasks($params, $context)
+    public function getTaskList($params, $context)
     {
-        global $xmlConfig;
-
         // Validate the RPC caller context.
-        $this->validateMethodContext(
-            $context,
-            array( "role" => OMV_ROLE_ADMINISTRATOR )
-        );
-
+        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       :"object",
-            "properties" : {
-                "start"     : { "type" : "integer" },
-                "limit"     : { '.$GLOBALS['OMV_JSONSCHEMA_COUNTFIELD'].' },
-                "sortfield" : { '.$GLOBALS['OMV_JSONSCHEMA_SORTFIELD'].' },
-                "sortdir"   : { '.$GLOBALS['OMV_JSONSCHEMA_SORTDIR'].' }
-              }
-        }');
-
-        // Get the configuration object.
-        $objects = $xmlConfig->getList( $this->getXPathTask() );
-
-        if (is_null($objects))
-        {
-            throw new OMVException(
-                OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
-                $this->getXPathTask()
-            );
-        }
-
-        // Get cron jobs that match the given type.
-        $jobs = array();
-        foreach($objects as $objectk => $objectv)
-        {
-            // Modify result data.
-            $objectv['enable']    = boolval($objectv['enable']);
-            $objectv['sendemail'] = boolval($objectv['sendemail']);
-
-            $jobs[] = $objectv;
-        }
-
+        $this->validateMethodParams($params, "rpc.common.getlist");
+        // Get configuration data.
+        $db = \OMV\Config\Database::getInstance();
+        $objects = $db->getAssoc("conf.service.anacron.task");
         // Filter the result.
-        return $this->applyFilter($jobs, $params['start'], $params['limit'],
+        return $this->applyFilter($objects, $params['start'], $params['limit'],
             $params['sortfield'], $params['sortdir']);
     }
 
     public function getTask($params, $context)
     {
-        global $xmlConfig;
-
         // Validate the RPC caller context.
-        $this->validateMethodContext(
-            $context,
-            array( "role" => OMV_ROLE_ADMINISTRATOR )
-        );
-
+        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "uuid" : { '.$GLOBALS['OMV_JSONSCHEMA_UUID'].' }
-            }
-        }');
-
+        $this->validateMethodParams($params, "rpc.common.objectuuid");
         // Get the configuration object.
-        $xPath = sprintf("%s[uuid='%s']", $this->getXPathTask(), $params['uuid']);
-        $object = $xmlConfig->get($xPath);
-
-        if (is_null($object))
-        {
-            throw new OMVException(
-                OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
-                $xPath
-            );
-        }
-
-        // Modify the result object.
-        $object['enable']    = boolval($object['enable']);
-        $object['sendemail'] = boolval($object['sendemail']);
-
-        return $object;
+        $db = \OMV\Config\Database::getInstance();
+        return $db->getAssoc("conf.service.anacron.drive", $params['uuid']);
     }
 
     public function setTask($params, $context)
     {
-        global $xmlConfig;
-
         // Validate the RPC caller context.
-        $this->validateMethodContext(
-            $context,
-            array( "role" => OMV_ROLE_ADMINISTRATOR )
-        );
-
+        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "uuid"       : { '.$GLOBALS['OMV_JSONSCHEMA_UUID_UNDEFINED'].' },
-                "enable"     : { "type" : "boolean" },
-                "sendemail"  : { "type" : "boolean" },
-                "period"     : { "type" : "string" },
-                "delay"      : { "type" : "integer" },
-                "identifier" : { "type" : "string" },
-                "username"   : { "type" : "string" },
-                "command"    : { "type" : "string" },
-                "comment"    : { "type" : "string" }
-            }
-        }');
-
+        $this->validateMethodParams($params, "rpc.anacron.settask");
         // Prepare the configuration object.
-        $object = array(
-            "uuid"       => ($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) ? OMVUtil::uuid() : $params['uuid'],
-            "enable"     => array_boolval($params, 'enable'),
-            "sendemail"  => array_boolval($params, 'sendemail'),
-            "period"     => $params['period'],
-            "delay"      => $params['delay'],
-            "identifier" => str_replace(" ", "_", $params['identifier']),
-            "username"   => $params['username'],
-            "command"    => $params['command'],
-            "comment"    => $params['comment']
-        );
-
+        $object = new \OMV\Config\ConfigObject("conf.service.anacron.task");
+        $db = \OMV\Config\Database::getInstance();
+        $object->setAssoc($params);
         // Set the configuration object.
-        $success = FALSE;
-
-        if ($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED'])
-        {
-            // Append object to configuration.
-            $success = $xmlConfig->set($this->getXPath(), array("task" => $object));
-        }
-        else
-        {
-            // Update existing configuration object.
-            $xPath = sprintf("%s[uuid='%s']", $this->getXPathTask(), $params['uuid']);
-            $success = $xmlConfig->replace($xPath, $object);
-        }
-
-        if (FALSE === $success)
-        {
-            throw new OMVException(
-                OMVErrorMsg::E_CONFIG_SET_OBJECT_FAILED
-            );
-        }
-
-        // Notify configuration changes.
-        $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(
-            ($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) ? OMV_NOTIFY_CREATE : OMV_NOTIFY_MODIFY,
-            $this->getEventMessagePathTask(),
-            $object
-        );
-
+        $db->set($object);
         // Return the configuration object.
-        return $object;
+        return $object->getAssoc();
     }
 
     public function deleteTask($params, $context)
     {
         // Validate the RPC caller context.
-        $this->validateMethodContext(
-            $context,
-            array( "role" => OMV_ROLE_ADMINISTRATOR )
-        );
-
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "uuid" : { '.$GLOBALS['OMV_JSONSCHEMA_UUID'].' }
-            }
-        }');
-
+        $this->validateMethodParams($params, 'rpc.common.objectuuid');
         // Delete the configuration object.
-        $xPath = sprintf("%s[uuid='%s']", $this->getXPathTask(), $params['uuid']);
-        $object = $this->deleteConfigObjectByPath(
-            $xPath,
-            $this->getEventMessagePathTask()
-        );
-
+        $db = \OMV\Config\Database::getInstance();
+        $object = $db->get('conf.service.anacron.task', $params['uuid']);
+        $db->delete($object);
         // Return the deleted configuration object.
-        return $object;
+        return $object->getAssoc();
     }
 
     public function getCommands($params, $context)
     {
-        global $xmlConfig;
-
         // Validate the RPC caller context.
-        $this->validateMethodContext(
-            $context,
-            array( "role" => OMV_ROLE_ADMINISTRATOR )
-        );
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
 
-        $objects = array();
+        $objects = [];
 
         // Get list of files in /var/lib/anacron
         $objects1 = array_diff(scandir("/var/lib/anacron"), array("..", "."));
@@ -273,35 +105,33 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         // Get list of files in /usr/local/bin
         $objects2 = array_diff(
             scandir("/usr/local/bin"),
-            array(
+            [
                 "..",
                 ".",
                 "installbackports",
                 "omv-support-libs",
                 "omv-support.sh",
-                "snapraid",
+                "anacron",
                 "upssched-cmd",
                 "youtube-dl",
                 "fixmodule",
                 "create_greyhole_db",
                 "installsystemd"
-            )
+            ]
         );
 
-        foreach ($objects2 as &$value)
-        {
+        foreach ($objects2 as &$value) {
             $value = "/usr/local/bin/" . $value;
         }
 
         $objects = array_merge($objects1, $objects2);
 
-        $result = array();
-        foreach ($objects as $row)
-        {
+        $result = [];
+        foreach ($objects as $row) {
             // Prepare result object.
-            $object = array(
+            $object = [
                 "script" => $row
-            );
+            ];
 
             $result[] = $object;
         }
@@ -312,36 +142,31 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
     function doUpload($params, $context)
     {
         // Validate the RPC caller context.
-        $this->validateMethodContext(
-            $context,
-            array( "role" => OMV_ROLE_ADMINISTRATOR )
-        );
-
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "filename" : { "type" : "string" },
-                "filepath" : { "type" : "string" }
-            }
-        }');
+        $this->validateMethodParams($params, "rpc.anacron.doupload");
 
-        if ( !file_exists("/var/lib/anacron") )
-        {
-            if ( !mkdir("/var/lib/anacron", 0755) )
-            {
-                throw new OMVException(
-                    OMVErrorMsg::E_MISC_FAILURE,
+        // Prepare the configuration object.
+        $object = new \OMV\Config\ConfigObject("conf.service.anacron.task");
+        $db = \OMV\Config\Database::getInstance();
+        $object->setAssoc($params);
+        // Set the configuration object.
+        $db->set($object);
+        // Return the configuration object.
+        return $object->getAssoc();
+
+        if ( !file_exists("/var/lib/anacron") ) {
+            if ( !mkdir("/var/lib/anacron", 0755) ) {
+                throw new \OMV\Exception(
                     "Failed to make script directory '/var/lib/anacron/'."
                 );
             }
         }
 
         // Move file to /var/lib/anacron.
-        if(!rename($params['filepath'], sprintf("/var/lib/anacron/%s", $params['filename'])))
-        {
-            throw new OMVException(
-                OMVErrorMsg::E_MISC_FAILURE,
+        if ( !rename($params['filepath'],
+             sprintf("/var/lib/anacron/%s", $params['filename']))) {
+            throw new \OMV\Exception(
                 sprintf(
                     "Failed to move script '%s' to '/var/lib/anacron/'.",
                     $params['filename']
@@ -350,10 +175,8 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
         }
 
         // Make script executable
-        if( !chmod( sprintf("/var/lib/anacron/%s", $params['filename']), 0755) )
-        {
-            throw new OMVException(
-                OMVErrorMsg::E_MISC_FAILURE,
+        if ( !chmod( sprintf("/var/lib/anacron/%s", $params['filename']), 0755) ) {
+            throw new \OMV\Exception(
                 sprintf(
                     "Failed to make script executable - '%s'",
                     $params['filename']
@@ -364,56 +187,34 @@ class OMVRpcServiceAnacron extends OMVRpcServiceAbstract {
 
     public function doExecute($params, $context)
     {
-        global $xmlConfig;
-
         // Validate the RPC caller context.
-        $this->validateMethodContext(
-            $context,
-            array( "role" => OMV_ROLE_ADMINISTRATOR )
-        );
-
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "uuid" : { '.$GLOBALS['OMV_JSONSCHEMA_UUID'].' }
-            }
-        }');
-
-        // Create a background process.
-        $bgStatusFilename = $this->createBgProcStatus();
-        $pid = $this->fork();
-        if ($pid > 0)
-        { // Parent process.
-            $this->initializeBgProcStatus($bgStatusFilename, $pid);
-            return $bgStatusFilename;
-        }
-
-        // Child process.
-        try {
-            $bgOutputFilename = $this->createBgProcOutput();
-            $this->updateBgProcStatus($bgStatusFilename, "outputfilename", $bgOutputFilename);
-
-            // Get the anacron task object.
-            $object = $this->callMethod("getTask", array("uuid" => $params['uuid']), $context);
-
+        $this->validateMethodParams($params, "rpc.common.objectuuid");
+        // Create the background process.
+        return $this->execBgProc(function($bgStatusFilename, $bgOutputFilename)
+          use ($params) {
+            // Get the configuration object.
+            $db = \OMV\Config\Database::getInstance();
+            $object = $db->get("conf.service.anacron.task", $params['uuid']);
             // Execute the cron command line in a shell.
-            $cmd = "/bin/su";
-            $cmdArgs = array("-c", $object['command'], $object['username']);
-            if (FALSE === $this->execve($cmd, $cmdArgs, $bgOutputFilename))
-            {
-                throw new OMVException(
-                    OMVErrorMsg::E_EXEC_FAILED,
-                    $cmd." ".implode(" ", $cmdArgs), ""
-                );
+            // Note, we need to set the shell, otherwise the users shell
+            // is used instead of the shebang of the command script.
+            $cmdArgs = [];
+            $cmdArgs[] = "--shell";
+            $cmdArgs[] = "--non-interactive";
+            $cmdArgs[] = sprintf("--user=%s", $object->get("username"));
+            $cmdArgs[] = "--";
+            $cmdArgs[] = $object->get("command");
+            $cmd = new \OMV\System\Process("sudo", $cmdArgs);
+            $cmd->setEnv("SHELL", "/bin/sh");
+            $cmd->setRedirect2to1();
+            if (0 !== ($exitStatus = $this->exec($cmd->getCommandLine(),
+                $output, $bgOutputFilename))) {
+                throw new \OMV\ExecException($cmd->getCommandLine(), $output,
+                    $exitStatus);
             }
-        } catch(Exception $e) {
-            $this->finalizeBgProcStatus($bgStatusFilename, "", $e);
-            exit(1);
-        }
+            return $output;
+        });
     }
 }
-
-// Register the RPC service.
-$rpcServiceMgr = &OMVRpcServiceMgr::getInstance();
-$rpcServiceMgr->registerService(new OMVRpcServiceAnacron());

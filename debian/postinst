@@ -10,16 +10,13 @@ ANACRON_SCRIPT_DIR="/var/lib/anacron"
 case "$1" in
     configure)
 
-    if ! omv_config_exists "/config/services/anacron"; then
-        echo "Initial configuration."
-        omv_config_add_element "/config/services" "anacron" "${object}" true
-    fi
+        echo "Updating configuration database ..."
+        omv-confdbadm create "conf.service.anacron"
+        if [ -n "$2" ]; then
+            omv-confdbadm migrate "conf.service.anacron" "${2}"
+        fi
 
-    if [ ! -d "${ANACRON_SCRIPT_DIR}" ]; then
-        mkdir -p ${ANACRON_SCRIPT_DIR}
-        chmod 0755 ${ANACRON_SCRIPT_DIR}
-    fi
-
+        omv-mkconf anacron
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
