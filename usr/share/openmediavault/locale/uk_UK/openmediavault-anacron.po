@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-anacron package.
 # 
 # Translators:
-# zubr139, 2014
+# zubr139, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-23 06:49-0600\n"
-"PO-Revision-Date: 2014-12-23 12:52+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/projects/p/openmediavault-anacron/language/uk/)\n"
+"POT-Creation-Date: 2017-10-12 16:26-0500\n"
+"PO-Revision-Date: 2017-09-23 19:34+0000\n"
+"Last-Translator: zubr139\n"
+"Language-Team: Ukrainian (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,25 +64,25 @@ msgid "Period"
 msgstr "Період"
 
 msgid "Run"
-msgstr ""
+msgstr "Запустити"
 
 msgid "Select a script ..."
-msgstr ""
+msgstr "Оберіть сценарій ..."
 
 msgid "Send Email"
-msgstr ""
+msgstr "Надіслати Електронною Поштою"
 
 msgid "Send command output via email"
 msgstr ""
 
 msgid "Send email"
-msgstr ""
+msgstr "Надіслати електронною поштою"
 
 msgid "Upload"
-msgstr ""
+msgstr "Завантажити"
 
 msgid "Upload anacron script"
-msgstr ""
+msgstr "Завантажити скрипт Anacron"
 
 msgid "User"
 msgstr "Користувач"

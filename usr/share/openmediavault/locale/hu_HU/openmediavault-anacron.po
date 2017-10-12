@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-anacron package.
 # 
 # Translators:
+# Falu <info@falu.me>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-23 06:49-0600\n"
-"PO-Revision-Date: 2014-12-23 12:52+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
-"Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/openmediavault-anacron/language/hu_HU/)\n"
+"POT-Creation-Date: 2017-10-12 16:26-0500\n"
+"PO-Revision-Date: 2017-09-21 14:00+0000\n"
+"Last-Translator: Falu <info@falu.me>\n"
+"Language-Team: Hungarian (Hungary) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/hu_HU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,79 +19,79 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add anacron task"
-msgstr ""
+msgstr "Anacron feladat hozzáadás"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
 "user who performs the job."
-msgstr ""
+msgstr "Egy email a parancs kimenetével (ha van valami) lesz elküldve a feladatot végrehajtó felhasználónak. "
 
 msgid "Anacron"
-msgstr ""
+msgstr "Anacron"
 
 msgid "Command"
-msgstr ""
+msgstr "Parancs"
 
 msgid "Comment"
-msgstr ""
+msgstr "Megjegyzés"
 
 msgid "Delay"
-msgstr ""
+msgstr "Késleltetés"
 
 msgid "Delay time in minutes"
-msgstr ""
+msgstr "Késleltetés percben"
 
 msgid "Edit anacron task"
-msgstr ""
+msgstr "Anacron feladat szerkesztés"
 
 msgid "Enable"
-msgstr ""
+msgstr "Engedélyez"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Engedélyezett"
 
 msgid "Execute anacron task"
-msgstr ""
+msgstr "Anacron feladat végrehajtása"
 
 msgid "Identifier"
-msgstr ""
+msgstr "Azonosító"
 
 msgid ""
 "List of scripts available.  If none listed, upload one or type command."
-msgstr ""
+msgstr "Lérhető szkriptek listája. Ha nem jelenik meg semmi, akkor tölts fel egyet vagy írd be a parancsot."
 
 msgid "Period"
-msgstr ""
+msgstr "Időköz"
 
 msgid "Run"
-msgstr ""
+msgstr "Futtatás"
 
 msgid "Select a script ..."
-msgstr ""
+msgstr "Válassz egy szkriptet..."
 
 msgid "Send Email"
-msgstr ""
+msgstr "Email küldés"
 
 msgid "Send command output via email"
-msgstr ""
+msgstr "Parancs kimenetének elküldése emailben"
 
 msgid "Send email"
-msgstr ""
+msgstr "Email küldés"
 
 msgid "Upload"
-msgstr ""
+msgstr "Feltöltés"
 
 msgid "Upload anacron script"
-msgstr ""
+msgstr "Anacron szkript feltöltés"
 
 msgid "User"
-msgstr ""
+msgstr "Felhasználó"
 
 msgid "daily"
-msgstr ""
+msgstr "naponta"
 
 msgid "monthly"
-msgstr ""
+msgstr "havona"
 
 msgid "weekly"
-msgstr ""
+msgstr "hetente"

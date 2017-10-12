@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-anacron package.
 # 
 # Translators:
+# Seboss666 <sebastien_verdet@seboss666.info>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-23 06:49-0600\n"
-"PO-Revision-Date: 2014-12-23 12:52+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/openmediavault-anacron/language/fr/)\n"
+"POT-Creation-Date: 2017-10-12 16:26-0500\n"
+"PO-Revision-Date: 2017-09-21 14:00+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
+"Language-Team: French (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,79 +19,79 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Add anacron task"
-msgstr ""
+msgstr "Ajouter une tâche anacron"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
 "user who performs the job."
-msgstr ""
+msgstr "Un e-mail avec la sortie de la commande (s'il y en a une) a été envoyée à l'utilisateur qui exécute la tâche."
 
 msgid "Anacron"
-msgstr ""
+msgstr "Anacron"
 
 msgid "Command"
-msgstr ""
+msgstr "Commande"
 
 msgid "Comment"
-msgstr ""
+msgstr "Commentaire"
 
 msgid "Delay"
-msgstr ""
+msgstr "Décalage"
 
 msgid "Delay time in minutes"
-msgstr ""
+msgstr "Décalage en minutes"
 
 msgid "Edit anacron task"
-msgstr ""
+msgstr "Modifier la tâche anacron"
 
 msgid "Enable"
-msgstr ""
+msgstr "Activer"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Activé"
 
 msgid "Execute anacron task"
-msgstr ""
+msgstr "Exécuter la tâche anacron"
 
 msgid "Identifier"
-msgstr ""
+msgstr "Identifiant"
 
 msgid ""
 "List of scripts available.  If none listed, upload one or type command."
-msgstr ""
+msgstr "Liste des scripts disponibles. Si aucun n’apparaît, envoyez-en un ou saisissez une commande."
 
 msgid "Period"
-msgstr ""
+msgstr "Période"
 
 msgid "Run"
-msgstr ""
+msgstr "Exécuter"
 
 msgid "Select a script ..."
-msgstr ""
+msgstr "Sélectionnez un script ..."
 
 msgid "Send Email"
-msgstr ""
+msgstr "Envoyer un e-mail"
 
 msgid "Send command output via email"
-msgstr ""
+msgstr "Envoyer la sortie de commande par e-mail"
 
 msgid "Send email"
-msgstr ""
+msgstr "Envoyer un e-mail"
 
 msgid "Upload"
-msgstr ""
+msgstr "Téléverser"
 
 msgid "Upload anacron script"
-msgstr ""
+msgstr "Téléverser un script anacron"
 
 msgid "User"
-msgstr ""
+msgstr "Utilisateur"
 
 msgid "daily"
-msgstr ""
+msgstr "quotidien"
 
 msgid "monthly"
-msgstr ""
+msgstr "mensuel"
 
 msgid "weekly"
-msgstr ""
+msgstr "hebdomadaire"

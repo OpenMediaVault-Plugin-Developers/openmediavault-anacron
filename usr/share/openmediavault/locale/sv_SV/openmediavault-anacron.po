@@ -3,95 +3,95 @@
 # This file is distributed under the same license as the openmediavault-anacron package.
 # 
 # Translators:
-# Cyryl Sochacki <cyrylsochacki@gmail.com>, 2014-2015
+# Jonatan Nyberg, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-10-12 16:26-0500\n"
-"PO-Revision-Date: 2017-09-23 20:04+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Polish (Poland) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/pl_PL/)\n"
+"PO-Revision-Date: 2017-09-26 04:08+0000\n"
+"Last-Translator: Jonatan Nyberg\n"
+"Language-Team: Swedish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl_PL\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add anacron task"
-msgstr "Dodaj zadanie"
+msgstr "Lägg till anacron uppgift"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
 "user who performs the job."
-msgstr ""
+msgstr "Ett e-postmeddelande med kommandoutmatningen (om någon produceras) skickas till användaren som utför jobbet."
 
 msgid "Anacron"
 msgstr "Anacron"
 
 msgid "Command"
-msgstr "Polecenie"
+msgstr "Kommando"
 
 msgid "Comment"
-msgstr "Komentarz"
+msgstr "Kommentar"
 
 msgid "Delay"
-msgstr "Opóźnienie"
+msgstr "Fördröjning"
 
 msgid "Delay time in minutes"
-msgstr "Czas opóźnienia w minutach"
+msgstr "Fördröjningstid i minuter"
 
 msgid "Edit anacron task"
-msgstr "Edytuj zadanie"
+msgstr "Redigera anacron uppgift"
 
 msgid "Enable"
-msgstr "Włącz"
+msgstr "Aktivera"
 
 msgid "Enabled"
-msgstr "Włączony"
+msgstr "Aktiverad"
 
 msgid "Execute anacron task"
-msgstr "Wykonaj zadanie"
+msgstr "Utför anacron uppgift"
 
 msgid "Identifier"
-msgstr ""
+msgstr "Identifierare"
 
 msgid ""
 "List of scripts available.  If none listed, upload one or type command."
-msgstr ""
+msgstr "Lista över tillgängliga skript. Om inget listas, ladda upp ett eller skriv kommandot."
 
 msgid "Period"
-msgstr ""
+msgstr "Period"
 
 msgid "Run"
-msgstr "Uruchom"
+msgstr "Kör"
 
 msgid "Select a script ..."
-msgstr "Wybierz skrypt"
+msgstr "Välj ett skript ..."
 
 msgid "Send Email"
-msgstr "Wyślij email"
+msgstr "Skicka e-post"
 
 msgid "Send command output via email"
-msgstr "Wyślij wyjście polecenia przez email"
+msgstr "Skicka kommandoutdata via e-post"
 
 msgid "Send email"
-msgstr "Wyślij email"
+msgstr "Skicka e-post"
 
 msgid "Upload"
-msgstr "Wczytaj"
+msgstr "Ladda upp"
 
 msgid "Upload anacron script"
-msgstr "Wczytaj skrypt anacrona"
+msgstr "Ladda upp anacron skript"
 
 msgid "User"
-msgstr "Użytkownik"
+msgstr "Användare"
 
 msgid "daily"
-msgstr "Dziennie"
+msgstr "dagligen"
 
 msgid "monthly"
-msgstr "miesięcznie"
+msgstr "månadsvis"
 
 msgid "weekly"
-msgstr "tygodniowo"
+msgstr "veckovis"

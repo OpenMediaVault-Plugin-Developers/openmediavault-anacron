@@ -1,33 +1,35 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-anacron package.
 # 
 # Translators:
 # Alexander Savchenko, 2014
+# Артур Мудрых <arturmon82@gmail.com>, 2015
+# Артур Мудрых <arturmon82@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-23 06:49-0600\n"
-"PO-Revision-Date: 2014-12-23 12:52+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/openmediavault-anacron/language/ru/)\n"
+"POT-Creation-Date: 2017-10-12 16:26-0500\n"
+"PO-Revision-Date: 2017-09-20 04:22+0000\n"
+"Last-Translator: Артур Мудрых <arturmon82@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "Add anacron task"
-msgstr ""
+msgstr "Добавить задачу Anacron"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
 "user who performs the job."
-msgstr ""
+msgstr "Сообщение электронной почты с выводом команды (если таковое имеется) отправляется пользователю, выполняющему задание."
 
 msgid "Anacron"
-msgstr ""
+msgstr "Anacron"
 
 msgid "Command"
 msgstr "Комманда"
@@ -36,53 +38,53 @@ msgid "Comment"
 msgstr "Комментарий"
 
 msgid "Delay"
-msgstr ""
+msgstr "Задержка"
 
 msgid "Delay time in minutes"
-msgstr ""
+msgstr "Время задержки в минутах"
 
 msgid "Edit anacron task"
-msgstr ""
+msgstr "Редактировать задание Anacron"
 
 msgid "Enable"
 msgstr "Включить"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Включено"
 
 msgid "Execute anacron task"
-msgstr ""
+msgstr "Выполнить задачу Anacron"
 
 msgid "Identifier"
-msgstr ""
+msgstr "Индентификатор"
 
 msgid ""
 "List of scripts available.  If none listed, upload one or type command."
-msgstr ""
+msgstr "Список доступных скриптов. Если в списке нет, загрузите одну или введите команду."
 
 msgid "Period"
-msgstr ""
+msgstr "Период"
 
 msgid "Run"
-msgstr ""
+msgstr "Запустить"
 
 msgid "Select a script ..."
-msgstr ""
+msgstr "Выберите сценарий ..."
 
 msgid "Send Email"
-msgstr ""
+msgstr "Отправить Email"
 
 msgid "Send command output via email"
-msgstr ""
+msgstr "Отправка команды по электронной почте"
 
 msgid "Send email"
-msgstr ""
+msgstr "Отправить email"
 
 msgid "Upload"
 msgstr "Загрузить"
 
 msgid "Upload anacron script"
-msgstr ""
+msgstr "Загрузить скрипт Anacron"
 
 msgid "User"
 msgstr "Пользователь"
