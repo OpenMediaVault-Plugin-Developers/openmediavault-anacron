@@ -11,6 +11,7 @@ ANACRON_SECTIONNAME="omvanacron"
 
 case "$1" in
     purge)
+        omv_config_delete "/config/services/anacron"
         rm -rf /var/lib/anacron
     ;;
 
