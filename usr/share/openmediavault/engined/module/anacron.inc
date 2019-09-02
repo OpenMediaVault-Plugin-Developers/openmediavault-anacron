@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2013-2017 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2019 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,13 +22,6 @@ class OMVModuleAnacron extends \OMV\Engine\Module\ServiceAbstract
     public function getName()
     {
         return "anacron";
-    }
-
-    public function applyConfig()
-    {
-        $cmd = new \OMV\System\Process('omv-mkconf', 'anacron');
-        $cmd->setRedirect2to1();
-        $cmd->execute();
     }
 
     public function bindListeners(\OMV\Engine\Notify\Dispatcher $dispatcher)

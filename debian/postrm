@@ -5,17 +5,22 @@ set -e
 . /etc/default/openmediavault
 . /usr/share/openmediavault/scripts/helper-functions
 
-ANACRON_SCRIPT_DIR="/var/lib/anacron"
 ANACRON_CONFIG="/etc/anacrontab"
 ANACRON_SECTIONNAME="omvanacron"
 
+remove_action() {
+    dpkg-trigger update-fixperms
+}
+
 case "$1" in
     purge)
+        remove_action
         omv_config_delete "/config/services/anacron"
         rm -rf /var/lib/anacron
     ;;
 
     remove)
+        remove_action
         sed -i "/# >>> \[${ANACRON_SECTIONNAME}\]/,/# <<< \[${ANACRON_SECTIONNAME}\]/d" ${ANACRON_CONFIG}
     ;;
 
