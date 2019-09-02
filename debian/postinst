@@ -16,7 +16,7 @@ case "$1" in
             omv-confdbadm migrate "conf.service.anacron" "${2}"
         fi
 
-        omv-salt deply run anacron
+        omv-salt deploy run anacron
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
