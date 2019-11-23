@@ -26,15 +26,15 @@ append_anacron_entries:
     - append_if_not_found: True
     - show_changes: True
 
+configure_script_dir:
+  file.directory:
+    - name: "/var/lib/anacron"
+    - makedirs: True
+    - mode: 755
+
 include:
 {% for file in salt['file.readdir'](dirpath) | sort %}
 {% if file | regex_match('^(\d+.+).sls$', ignorecase=True) %}
   - .{{ file | replace('.sls', '') }}
 {% endif %}
 {% endfor %}
-
-configure_script_dir:
-  file.directory:
-    - name: "/var/lib/anacron"
-    - makedirs: True
-    - mode: 755

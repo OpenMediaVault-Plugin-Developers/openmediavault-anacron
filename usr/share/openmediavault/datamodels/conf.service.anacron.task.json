@@ -3,7 +3,7 @@
 	"id": "conf.service.anacron.task",
 	"title": "Anacron task",
 	"queryinfo": {
-		"xpath": "//services/anacron/task",
+		"xpath": "//services/anacron/tasks/task",
 		"iterable": true,
 		"idproperty": "uuid"
 	},
