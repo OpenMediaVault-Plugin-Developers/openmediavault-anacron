@@ -5,7 +5,7 @@
 create_anacron_task_{{ task.uuid }}:
   file.accumulated:
     - filename: "/etc/anacrontab"
-    - text: "{{ task.period }}\t{{ task.delay }}\t{{ task.identifier }}\t{{ task.command }} | mail -E -s \"Anacron - {{ task.comment | replace('\n', ' ') }}\" -a \"From: Anacron Daemon <{{ task.username }}>\" {{ task.username }} {{ end }}" 
+    - text: "{{ task.period }}\t{{ task.delay }}\t{{ task.identifier }}\t{{ task.command }} | mail -E -s \"Anacron - {{ task.comment | replace('\n', ' ') }}\" -a \"From: Anacron Daemon <{{ task.username }}>\" {{ task.username }}{{ end }}" 
     - require_in:
       - file: append_anacron_entries
 {%- else %}
