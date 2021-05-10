@@ -1,3 +1,9 @@
+openmediavault-anacron (5.0.3) stable; urgency=low
+
+  * Fix issue #4 - no email when no comment
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 10 May 2021 18:50:47 -0500
+
 openmediavault-anacron (5.0.2) stable; urgency=low
 
   * Fix email notifications
