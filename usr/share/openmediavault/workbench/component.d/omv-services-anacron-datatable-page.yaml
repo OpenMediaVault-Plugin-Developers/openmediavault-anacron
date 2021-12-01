@@ -36,7 +36,7 @@ data:
         flexGrow: 1
         sortable: true
       - name: _("User")
-        prop: user
+        prop: username
         flexGrow: 1
         sortable: true
       - name: _("Command")
