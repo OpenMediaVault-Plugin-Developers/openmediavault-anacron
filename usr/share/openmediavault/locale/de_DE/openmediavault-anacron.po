@@ -9,18 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:26-0500\n"
-"PO-Revision-Date: 2017-09-20 18:27+0000\n"
-"Last-Translator: Raiko\n"
+"POT-Creation-Date: 2021-11-30 19:15-0600\n"
+"PO-Revision-Date: 2021-12-01 01:15+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid "Add anacron task"
-msgstr "anacron-Aufgabe hinzufügen"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
@@ -36,14 +33,17 @@ msgstr "Befehl"
 msgid "Comment"
 msgstr "Kommentar"
 
+msgid "Create"
+msgstr ""
+
+msgid "Created task."
+msgstr ""
+
 msgid "Delay"
 msgstr "Verzögerung"
 
-msgid "Delay time in minutes"
-msgstr "Verzögerungszeit in Minuten"
-
-msgid "Edit anacron task"
-msgstr "anacron-Aufgabe bearbeiten"
+msgid "Edit"
+msgstr ""
 
 msgid "Enable"
 msgstr "Aktivieren"
@@ -51,15 +51,14 @@ msgstr "Aktivieren"
 msgid "Enabled"
 msgstr "Aktiviert"
 
-msgid "Execute anacron task"
-msgstr "anacron-Aufgabe ausführen"
+msgid "Execute anacron task ..."
+msgstr ""
+
+msgid "Identifer"
+msgstr ""
 
 msgid "Identifier"
 msgstr "Bezeichner"
-
-msgid ""
-"List of scripts available.  If none listed, upload one or type command."
-msgstr "Liste der verfügbaren Skripte. Wenn keine vorhanden sind, laden Sie einen hoch oder schreiben den Befehl."
 
 msgid "Period"
 msgstr "Periode"
@@ -67,23 +66,17 @@ msgstr "Periode"
 msgid "Run"
 msgstr "Ausführen"
 
-msgid "Select a script ..."
-msgstr "Wählen Sie ein Skript aus ..."
+msgid "Select an user ..."
+msgstr ""
 
 msgid "Send Email"
 msgstr "E-Mail senden"
 
-msgid "Send command output via email"
-msgstr "Befehlsausgabe über E-Mail senden"
-
 msgid "Send email"
 msgstr "E-Mail senden"
 
-msgid "Upload"
-msgstr "Hochladen"
-
-msgid "Upload anacron script"
-msgstr "anacron-Skript hochladen"
+msgid "Updated task."
+msgstr ""
 
 msgid "User"
 msgstr "Benutzer"

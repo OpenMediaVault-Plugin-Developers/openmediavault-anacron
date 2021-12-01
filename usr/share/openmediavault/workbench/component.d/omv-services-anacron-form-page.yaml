@@ -1,0 +1,81 @@
+version: "1.0"
+type: component
+data:
+  name: omv-services-anacron-form-page
+  type: formPage
+  config:
+    request:
+      service: Anacron
+      get:
+        method: getTask
+        params:
+          uuid: "{{ _routeParams.uuid }}"
+      post:
+        method: setTask
+    fields:
+      - type: confObjUuid
+      - type: checkbox
+        name: enable
+        label: _("Enable")
+        value: true
+      - type: select
+        name: period
+        label: _("Period")
+        value: ""
+        store:
+          data:
+            - ["1", _("daily")]
+            - ["7", _("weekly")]
+            - ["@monthly", _("monthly")]
+      - type: numberInput
+        name: delay
+        label: _("Delay")
+        value: 0
+        hint: _('Delay time in minutes.')
+        validators:
+          min: 0
+          max: 1440
+          patternType: integer
+          required: true
+      - type: textInput
+        name: identifier
+        label: _("Identifier")
+        value: ""
+      - type: select
+        name: username
+        label: _("User")
+        placeholder: _("Select an user ...")
+        value: "root"
+        valueField: "name"
+        textField: "name"
+        store:
+          proxy:
+            service: UserMgmt
+            get:
+              method: enumerateAllUsers
+          sorters:
+            dir: asc
+            prop: name
+      - type: textInput
+        name: command
+        label: _("Command")
+        value: ""
+      - type: checkbox
+        name: sendemail
+        label: _("Send email")
+        value: false
+        hint: _("An email message with the command output (if any produced) is send to the user who performs the job.")
+      - type: textarea
+        name: comment
+        label: _("Comment")
+        value: ""
+        rows: 3
+    buttons:
+      - template: submit
+        execute:
+          type: url
+          url: "/services/anacron"
+      - template: cancel
+        execute:
+          type: url
+          url: "/services/anacron"

@@ -9,6 +9,8 @@ ANACRON_SCRIPT_DIR="/var/lib/anacron"
 
 case "$1" in
     configure)
+        # Activate package triggers.
+        dpkg-trigger update-workbench
 
         echo "Updating configuration database ..."
         omv-confdbadm create "conf.service.anacron"

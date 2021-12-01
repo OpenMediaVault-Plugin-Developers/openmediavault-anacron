@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:26-0500\n"
-"PO-Revision-Date: 2017-09-21 14:00+0000\n"
+"POT-Creation-Date: 2021-11-30 19:15-0600\n"
+"PO-Revision-Date: 2021-12-01 01:15+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-msgid "Add anacron task"
-msgstr "新增 anacron 工作"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
@@ -35,14 +32,17 @@ msgstr "指令"
 msgid "Comment"
 msgstr "註釋"
 
+msgid "Create"
+msgstr ""
+
+msgid "Created task."
+msgstr ""
+
 msgid "Delay"
 msgstr "延遲"
 
-msgid "Delay time in minutes"
-msgstr "延遲時間，以分鐘為單位"
-
-msgid "Edit anacron task"
-msgstr "編輯 anacron 工作"
+msgid "Edit"
+msgstr ""
 
 msgid "Enable"
 msgstr "啟用"
@@ -50,15 +50,14 @@ msgstr "啟用"
 msgid "Enabled"
 msgstr "已啟用"
 
-msgid "Execute anacron task"
-msgstr "執行 anacron 工作"
+msgid "Execute anacron task ..."
+msgstr ""
+
+msgid "Identifer"
+msgstr ""
 
 msgid "Identifier"
 msgstr "識別名稱"
-
-msgid ""
-"List of scripts available.  If none listed, upload one or type command."
-msgstr "可用腳本程式列表。若無任何列出，可上傳一份或鍵入指令。"
 
 msgid "Period"
 msgstr "週期"
@@ -66,23 +65,17 @@ msgstr "週期"
 msgid "Run"
 msgstr "執行"
 
-msgid "Select a script ..."
-msgstr "選擇一份腳本程式 ..."
+msgid "Select an user ..."
+msgstr ""
 
 msgid "Send Email"
 msgstr "發送電子郵件"
 
-msgid "Send command output via email"
-msgstr "經由電子郵件發送指令的輸出"
-
 msgid "Send email"
 msgstr "發送電子郵件"
 
-msgid "Upload"
-msgstr "上傳"
-
-msgid "Upload anacron script"
-msgstr "上傳 anacron 腳本程式"
+msgid "Updated task."
+msgstr ""
 
 msgid "User"
 msgstr "用戶"

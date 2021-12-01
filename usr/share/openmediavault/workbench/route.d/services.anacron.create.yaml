@@ -1,0 +1,7 @@
+version: "1.0"
+type: route
+data:
+  url: "/services/anacron/create"
+  title: _("Create")
+  notificationTitle: _("Created task.")
+  component: omv-services-anacron-form-page

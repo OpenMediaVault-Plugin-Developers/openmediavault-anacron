@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:26-0500\n"
-"PO-Revision-Date: 2017-09-21 14:00+0000\n"
+"POT-Creation-Date: 2021-11-30 19:15-0600\n"
+"PO-Revision-Date: 2021-12-01 01:15+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid "Add anacron task"
-msgstr "Añadir una tarea a anacron"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
@@ -35,14 +32,17 @@ msgstr "Comando"
 msgid "Comment"
 msgstr "Comentario"
 
+msgid "Create"
+msgstr ""
+
+msgid "Created task."
+msgstr ""
+
 msgid "Delay"
 msgstr "Retraso"
 
-msgid "Delay time in minutes"
-msgstr "Retraso en minutos"
-
-msgid "Edit anacron task"
-msgstr "Editar una tarea anacron"
+msgid "Edit"
+msgstr ""
 
 msgid "Enable"
 msgstr "Habilitar"
@@ -50,15 +50,14 @@ msgstr "Habilitar"
 msgid "Enabled"
 msgstr "Habilitado"
 
-msgid "Execute anacron task"
-msgstr "Ejecutar una tarea anacron"
+msgid "Execute anacron task ..."
+msgstr ""
+
+msgid "Identifer"
+msgstr ""
 
 msgid "Identifier"
 msgstr "Identificador"
-
-msgid ""
-"List of scripts available.  If none listed, upload one or type command."
-msgstr "Listado de script disponibles. Si no hay ninguno, suba uno o teclee el comando."
 
 msgid "Period"
 msgstr "Periodo"
@@ -66,23 +65,17 @@ msgstr "Periodo"
 msgid "Run"
 msgstr "Ejecutar"
 
-msgid "Select a script ..."
-msgstr "Seleccionar un script..."
+msgid "Select an user ..."
+msgstr ""
 
 msgid "Send Email"
 msgstr "Enviar email"
 
-msgid "Send command output via email"
-msgstr "Enviar salida del comando por email"
-
 msgid "Send email"
 msgstr "Enviar email"
 
-msgid "Upload"
-msgstr "Subida"
-
-msgid "Upload anacron script"
-msgstr "Subir un script anacron"
+msgid "Updated task."
+msgstr ""
 
 msgid "User"
 msgstr "Usuario"

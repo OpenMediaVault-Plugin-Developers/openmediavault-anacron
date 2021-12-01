@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:26-0500\n"
-"PO-Revision-Date: 2015-04-23 11:32+0000\n"
+"POT-Creation-Date: 2021-11-30 19:15-0600\n"
+"PO-Revision-Date: 2021-12-01 01:15+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Adyghe (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/ady/)\n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ady\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid "Add anacron task"
-msgstr ""
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
@@ -34,13 +31,16 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
+msgid "Create"
+msgstr ""
+
+msgid "Created task."
+msgstr ""
+
 msgid "Delay"
 msgstr ""
 
-msgid "Delay time in minutes"
-msgstr ""
-
-msgid "Edit anacron task"
+msgid "Edit"
 msgstr ""
 
 msgid "Enable"
@@ -49,14 +49,13 @@ msgstr ""
 msgid "Enabled"
 msgstr ""
 
-msgid "Execute anacron task"
+msgid "Execute anacron task ..."
+msgstr ""
+
+msgid "Identifer"
 msgstr ""
 
 msgid "Identifier"
-msgstr ""
-
-msgid ""
-"List of scripts available.  If none listed, upload one or type command."
 msgstr ""
 
 msgid "Period"
@@ -65,22 +64,16 @@ msgstr ""
 msgid "Run"
 msgstr ""
 
-msgid "Select a script ..."
+msgid "Select an user ..."
 msgstr ""
 
 msgid "Send Email"
 msgstr ""
 
-msgid "Send command output via email"
-msgstr ""
-
 msgid "Send email"
 msgstr ""
 
-msgid "Upload"
-msgstr ""
-
-msgid "Upload anacron script"
+msgid "Updated task."
 msgstr ""
 
 msgid "User"

@@ -1,3 +1,9 @@
+openmediavault-anacron (5.0.4) stable; urgency=low
+
+  * Update for OMV 6.x
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 30 Nov 2021 19:15:28 -0600
+
 openmediavault-anacron (5.0.3) stable; urgency=low
 
   * Fix issue #4 - no email when no comment

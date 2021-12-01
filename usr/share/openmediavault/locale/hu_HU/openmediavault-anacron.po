@@ -8,18 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:26-0500\n"
-"PO-Revision-Date: 2017-09-21 14:00+0000\n"
-"Last-Translator: Falu <info@falu.me>\n"
+"POT-Creation-Date: 2021-11-30 19:15-0600\n"
+"PO-Revision-Date: 2021-12-01 01:15+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/hu_HU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hu_HU\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid "Add anacron task"
-msgstr "Anacron feladat hozzáadás"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
@@ -35,14 +32,17 @@ msgstr "Parancs"
 msgid "Comment"
 msgstr "Megjegyzés"
 
+msgid "Create"
+msgstr ""
+
+msgid "Created task."
+msgstr ""
+
 msgid "Delay"
 msgstr "Késleltetés"
 
-msgid "Delay time in minutes"
-msgstr "Késleltetés percben"
-
-msgid "Edit anacron task"
-msgstr "Anacron feladat szerkesztés"
+msgid "Edit"
+msgstr ""
 
 msgid "Enable"
 msgstr "Engedélyez"
@@ -50,15 +50,14 @@ msgstr "Engedélyez"
 msgid "Enabled"
 msgstr "Engedélyezett"
 
-msgid "Execute anacron task"
-msgstr "Anacron feladat végrehajtása"
+msgid "Execute anacron task ..."
+msgstr ""
+
+msgid "Identifer"
+msgstr ""
 
 msgid "Identifier"
 msgstr "Azonosító"
-
-msgid ""
-"List of scripts available.  If none listed, upload one or type command."
-msgstr "Lérhető szkriptek listája. Ha nem jelenik meg semmi, akkor tölts fel egyet vagy írd be a parancsot."
 
 msgid "Period"
 msgstr "Időköz"
@@ -66,23 +65,17 @@ msgstr "Időköz"
 msgid "Run"
 msgstr "Futtatás"
 
-msgid "Select a script ..."
-msgstr "Válassz egy szkriptet..."
+msgid "Select an user ..."
+msgstr ""
 
 msgid "Send Email"
 msgstr "Email küldés"
 
-msgid "Send command output via email"
-msgstr "Parancs kimenetének elküldése emailben"
-
 msgid "Send email"
 msgstr "Email küldés"
 
-msgid "Upload"
-msgstr "Feltöltés"
-
-msgid "Upload anacron script"
-msgstr "Anacron szkript feltöltés"
+msgid "Updated task."
+msgstr ""
 
 msgid "User"
 msgstr "Felhasználó"

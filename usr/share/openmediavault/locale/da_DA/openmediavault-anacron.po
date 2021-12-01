@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:26-0500\n"
-"PO-Revision-Date: 2017-09-20 00:41+0000\n"
+"POT-Creation-Date: 2021-11-30 19:15-0600\n"
+"PO-Revision-Date: 2021-12-01 01:15+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid "Add anacron task"
-msgstr "Tilføj anacron opgave"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
@@ -35,14 +32,17 @@ msgstr "Kommando"
 msgid "Comment"
 msgstr "Kommentar"
 
+msgid "Create"
+msgstr ""
+
+msgid "Created task."
+msgstr ""
+
 msgid "Delay"
 msgstr "Forsinkelse"
 
-msgid "Delay time in minutes"
-msgstr "Forsinkelses tid i minutter"
-
-msgid "Edit anacron task"
-msgstr "Rediger anacron opgave"
+msgid "Edit"
+msgstr ""
 
 msgid "Enable"
 msgstr "Aktiver"
@@ -50,15 +50,14 @@ msgstr "Aktiver"
 msgid "Enabled"
 msgstr "Aktiveret"
 
-msgid "Execute anacron task"
-msgstr "Udfør anacron opgave"
+msgid "Execute anacron task ..."
+msgstr ""
+
+msgid "Identifer"
+msgstr ""
 
 msgid "Identifier"
 msgstr "Identifier"
-
-msgid ""
-"List of scripts available.  If none listed, upload one or type command."
-msgstr "Liste af tilgængelige scripts. Hvis der ingen er, så upload en eller skriv en kommando."
 
 msgid "Period"
 msgstr "Periode"
@@ -66,23 +65,17 @@ msgstr "Periode"
 msgid "Run"
 msgstr "Kør"
 
-msgid "Select a script ..."
-msgstr "Vælg et script ..."
+msgid "Select an user ..."
+msgstr ""
 
 msgid "Send Email"
 msgstr "Send Email"
 
-msgid "Send command output via email"
-msgstr "Send kommando output via email"
-
 msgid "Send email"
 msgstr "Send email"
 
-msgid "Upload"
-msgstr "Upload"
-
-msgid "Upload anacron script"
-msgstr "Upload anacron script"
+msgid "Updated task."
+msgstr ""
 
 msgid "User"
 msgstr "Bruger"

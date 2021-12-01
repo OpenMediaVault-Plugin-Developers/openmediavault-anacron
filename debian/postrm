@@ -9,7 +9,7 @@ ANACRON_CONFIG="/etc/anacrontab"
 ANACRON_SECTIONNAME="omvanacron"
 
 remove_action() {
-    dpkg-trigger update-fixperms
+    dpkg-trigger update-workbench
 }
 
 case "$1" in

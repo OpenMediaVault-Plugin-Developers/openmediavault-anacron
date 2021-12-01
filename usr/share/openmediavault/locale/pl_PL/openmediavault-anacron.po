@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:26-0500\n"
-"PO-Revision-Date: 2017-09-23 20:04+0000\n"
+"POT-Creation-Date: 2021-11-30 19:15-0600\n"
+"PO-Revision-Date: 2021-12-01 01:15+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Polish (Poland) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/pl_PL/)\n"
 "MIME-Version: 1.0\n"
@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl_PL\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
-
-msgid "Add anacron task"
-msgstr "Dodaj zadanie"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
@@ -35,14 +32,17 @@ msgstr "Polecenie"
 msgid "Comment"
 msgstr "Komentarz"
 
+msgid "Create"
+msgstr ""
+
+msgid "Created task."
+msgstr ""
+
 msgid "Delay"
 msgstr "Opóźnienie"
 
-msgid "Delay time in minutes"
-msgstr "Czas opóźnienia w minutach"
-
-msgid "Edit anacron task"
-msgstr "Edytuj zadanie"
+msgid "Edit"
+msgstr ""
 
 msgid "Enable"
 msgstr "Włącz"
@@ -50,14 +50,13 @@ msgstr "Włącz"
 msgid "Enabled"
 msgstr "Włączony"
 
-msgid "Execute anacron task"
-msgstr "Wykonaj zadanie"
-
-msgid "Identifier"
+msgid "Execute anacron task ..."
 msgstr ""
 
-msgid ""
-"List of scripts available.  If none listed, upload one or type command."
+msgid "Identifer"
+msgstr ""
+
+msgid "Identifier"
 msgstr ""
 
 msgid "Period"
@@ -66,23 +65,17 @@ msgstr ""
 msgid "Run"
 msgstr "Uruchom"
 
-msgid "Select a script ..."
-msgstr "Wybierz skrypt"
+msgid "Select an user ..."
+msgstr ""
 
 msgid "Send Email"
 msgstr "Wyślij email"
 
-msgid "Send command output via email"
-msgstr "Wyślij wyjście polecenia przez email"
-
 msgid "Send email"
 msgstr "Wyślij email"
 
-msgid "Upload"
-msgstr "Wczytaj"
-
-msgid "Upload anacron script"
-msgstr "Wczytaj skrypt anacrona"
+msgid "Updated task."
+msgstr ""
 
 msgid "User"
 msgstr "Użytkownik"

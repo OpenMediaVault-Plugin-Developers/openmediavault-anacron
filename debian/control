@@ -3,12 +3,12 @@ Section: misc
 XB-Plugin-Section: utilities
 Priority: optional
 Maintainer: OpenMediaVault Plugin Developers <plugins@omv-extras.org>
-Build-Depends: debhelper (>= 9.0.0)
-Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 12)
+Standards-Version: 4.3.0
 Homepage: http://omv-extras.org/
 
 Package: openmediavault-anacron
 Architecture: all
 Depends: anacron,
-         openmediavault (>= 5.0.6)
+         openmediavault (>= 6)
 Description: anacron plugin for OpenMediaVault.

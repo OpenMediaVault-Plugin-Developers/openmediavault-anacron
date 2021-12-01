@@ -1,0 +1,7 @@
+version: "1.0"
+type: navigation-item
+data:
+  path: "services.anacron"
+  text: _("Anacron")
+  icon: "mdi:clock-check-outline"
+  url: "/services/anacron"

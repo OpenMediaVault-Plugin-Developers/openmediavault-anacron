@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:26-0500\n"
-"PO-Revision-Date: 2017-09-22 02:07+0000\n"
+"POT-Creation-Date: 2021-11-30 19:15-0600\n"
+"PO-Revision-Date: 2021-12-01 01:15+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid "Add anacron task"
-msgstr "Add anacron task"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
@@ -35,14 +32,17 @@ msgstr "Command"
 msgid "Comment"
 msgstr "Comment"
 
+msgid "Create"
+msgstr ""
+
+msgid "Created task."
+msgstr ""
+
 msgid "Delay"
 msgstr "Delay"
 
-msgid "Delay time in minutes"
-msgstr "Delay time in minutes"
-
-msgid "Edit anacron task"
-msgstr "Edit anacron task"
+msgid "Edit"
+msgstr ""
 
 msgid "Enable"
 msgstr "Enable"
@@ -50,15 +50,14 @@ msgstr "Enable"
 msgid "Enabled"
 msgstr "Enabled"
 
-msgid "Execute anacron task"
-msgstr "Execute anacron task"
+msgid "Execute anacron task ..."
+msgstr ""
+
+msgid "Identifer"
+msgstr ""
 
 msgid "Identifier"
 msgstr "Identifier"
-
-msgid ""
-"List of scripts available.  If none listed, upload one or type command."
-msgstr "List of scripts available.  If none listed, upload one or type command."
 
 msgid "Period"
 msgstr "Period"
@@ -66,23 +65,17 @@ msgstr "Period"
 msgid "Run"
 msgstr "Run"
 
-msgid "Select a script ..."
-msgstr "Select a script ..."
+msgid "Select an user ..."
+msgstr ""
 
 msgid "Send Email"
 msgstr "Send Email"
 
-msgid "Send command output via email"
-msgstr "Send command output via email"
-
 msgid "Send email"
 msgstr "Send email"
 
-msgid "Upload"
-msgstr "Upload"
-
-msgid "Upload anacron script"
-msgstr "Upload anacron script"
+msgid "Updated task."
+msgstr ""
 
 msgid "User"
 msgstr "User"

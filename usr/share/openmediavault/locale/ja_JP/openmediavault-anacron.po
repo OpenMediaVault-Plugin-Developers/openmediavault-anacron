@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:26-0500\n"
-"PO-Revision-Date: 2017-09-20 00:16+0000\n"
+"POT-Creation-Date: 2021-11-30 19:15-0600\n"
+"PO-Revision-Date: 2021-12-01 01:15+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-msgid "Add anacron task"
-msgstr "anacronタスクの追加"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
@@ -35,14 +32,17 @@ msgstr "コマンド"
 msgid "Comment"
 msgstr "コメント"
 
+msgid "Create"
+msgstr ""
+
+msgid "Created task."
+msgstr ""
+
 msgid "Delay"
 msgstr "遅延"
 
-msgid "Delay time in minutes"
-msgstr "分単位の遅延時間"
-
-msgid "Edit anacron task"
-msgstr "anacronタスクの編集"
+msgid "Edit"
+msgstr ""
 
 msgid "Enable"
 msgstr "有効"
@@ -50,15 +50,14 @@ msgstr "有効"
 msgid "Enabled"
 msgstr "有効化済み"
 
-msgid "Execute anacron task"
-msgstr "anacronタスクの実行"
+msgid "Execute anacron task ..."
+msgstr ""
+
+msgid "Identifer"
+msgstr ""
 
 msgid "Identifier"
 msgstr "識別子"
-
-msgid ""
-"List of scripts available.  If none listed, upload one or type command."
-msgstr "利用可能なスクリプトのリスト。何も表示されない場合はスクリプトをアップロードするか、コマンドを入力してください。"
 
 msgid "Period"
 msgstr "期間"
@@ -66,23 +65,17 @@ msgstr "期間"
 msgid "Run"
 msgstr "実行"
 
-msgid "Select a script ..."
-msgstr "スクリプトの選択 ..."
+msgid "Select an user ..."
+msgstr ""
 
 msgid "Send Email"
 msgstr "メール送信"
 
-msgid "Send command output via email"
-msgstr "コマンドの出力を電子メールで送信"
-
 msgid "Send email"
 msgstr "電子メールの送信"
 
-msgid "Upload"
-msgstr "アップロード"
-
-msgid "Upload anacron script"
-msgstr "anacronスクリプトのアップロード"
+msgid "Updated task."
+msgstr ""
 
 msgid "User"
 msgstr "ユーザー"

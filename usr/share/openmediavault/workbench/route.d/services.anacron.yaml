@@ -1,0 +1,6 @@
+version: "1.0"
+type: route
+data:
+  url: "/services/anacron"
+  title: _("Anacron")
+  component: omv-services-anacron-task-datatable-page
