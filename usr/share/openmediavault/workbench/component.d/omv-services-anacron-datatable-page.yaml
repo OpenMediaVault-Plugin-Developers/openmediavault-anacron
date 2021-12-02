@@ -31,7 +31,7 @@ data:
         prop: delay
         flexGrow: 1
         sortable: true
-      - name: _("Identifer")
+      - name: _("Identifier")
         prop: identifier
         flexGrow: 1
         sortable: true
