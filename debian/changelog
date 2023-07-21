@@ -1,3 +1,10 @@
+openmediavault-anacron (6.0.2) stable; urgency=low
+
+  * Only allow letters, numbers, underscores for identifier
+  * Ensure that identifier has no spaces, no slashes and is not empty.
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 21 Jul 2023 09:47:21 -0500
+
 openmediavault-anacron (6.0.1) stable; urgency=low
 
   * Fix typo
