@@ -41,6 +41,9 @@ data:
         name: identifier
         label: _("Identifier")
         value: ""
+        validators:
+          required: true
+          patternType: wordChars
       - type: select
         name: username
         label: _("User")
