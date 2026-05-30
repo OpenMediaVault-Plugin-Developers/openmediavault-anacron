@@ -30,7 +30,7 @@ configure_script_dir:
   file.directory:
     - name: "/var/lib/anacron"
     - makedirs: True
-    - mode: 755
+    - mode: '0755'
 
 include:
 {% for file in salt['file.readdir'](dirpath) | sort %}
