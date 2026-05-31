@@ -5,16 +5,17 @@
 # Translators:
 # Alexander Savchenko, 2014
 # Дмитрий <bardimnik@rambler.ru>, 2018
-# Артур Мудрых <arturmon82@gmail.com>, 2015
-# Артур Мудрых <arturmon82@gmail.com>, 2017
+# Artur Mudrykh <arturmon82@gmail.com>, 2015
+# Artur Mudrykh <arturmon82@gmail.com>, 2017
+# Дмитрий <bardimnik@rambler.ru>, 2023
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 19:15-0600\n"
-"PO-Revision-Date: 2021-12-01 01:15+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Russian (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/ru/)\n"
+"POT-Creation-Date: 2026-05-31 00:54+0000\n"
+"PO-Revision-Date: 2014-02-12 13:12+0000\n"
+"Last-Translator: Дмитрий <bardimnik@rambler.ru>, 2023\n"
+"Language-Team: Russian (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,16 +37,16 @@ msgid "Comment"
 msgstr "Комментарий"
 
 msgid "Create"
-msgstr ""
+msgstr "Создать"
 
 msgid "Created task."
-msgstr ""
+msgstr "Создал задачу."
 
 msgid "Delay"
 msgstr "Задержка"
 
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 msgid "Enable"
 msgstr "Включить"
@@ -54,10 +55,7 @@ msgid "Enabled"
 msgstr "Включено"
 
 msgid "Execute anacron task ..."
-msgstr ""
-
-msgid "Identifer"
-msgstr ""
+msgstr "Выполнение задания анакрона ..."
 
 msgid "Identifier"
 msgstr "Индентификатор"
@@ -69,7 +67,7 @@ msgid "Run"
 msgstr "Запустить"
 
 msgid "Select an user ..."
-msgstr ""
+msgstr "Выберите пользователя ..."
 
 msgid "Send Email"
 msgstr "Отправить Email"
@@ -78,7 +76,7 @@ msgid "Send email"
 msgstr "Отправить email"
 
 msgid "Updated task."
-msgstr ""
+msgstr "Обновленная задача."
 
 msgid "User"
 msgstr "Пользователь"

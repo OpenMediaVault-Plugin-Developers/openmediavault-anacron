@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the openmediavault-anacron package.
 # 
 # Translators:
-# Toshihiro Kan <kansuke4649@gmail.com>, 2015
+# Toshihiro Kan <kansuke4649@gmail.com>, 2015,2023
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 19:15-0600\n"
-"PO-Revision-Date: 2021-12-01 01:15+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Japanese (Japan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/ja_JP/)\n"
+"POT-Creation-Date: 2026-05-31 00:54+0000\n"
+"PO-Revision-Date: 2014-02-12 13:12+0000\n"
+"Last-Translator: Toshihiro Kan <kansuke4649@gmail.com>, 2015,2023\n"
+"Language-Team: Japanese (Japan) (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,16 +33,16 @@ msgid "Comment"
 msgstr "コメント"
 
 msgid "Create"
-msgstr ""
+msgstr "作成"
 
 msgid "Created task."
-msgstr ""
+msgstr "作成されたタスク。"
 
 msgid "Delay"
 msgstr "遅延"
 
 msgid "Edit"
-msgstr ""
+msgstr "編集"
 
 msgid "Enable"
 msgstr "有効"
@@ -51,10 +51,7 @@ msgid "Enabled"
 msgstr "有効化済み"
 
 msgid "Execute anacron task ..."
-msgstr ""
-
-msgid "Identifer"
-msgstr ""
+msgstr "anacron タスクの実行 ..."
 
 msgid "Identifier"
 msgstr "識別子"
@@ -66,7 +63,7 @@ msgid "Run"
 msgstr "実行"
 
 msgid "Select an user ..."
-msgstr ""
+msgstr "ユーザーを選択する ..."
 
 msgid "Send Email"
 msgstr "メール送信"
@@ -75,7 +72,7 @@ msgid "Send email"
 msgstr "電子メールの送信"
 
 msgid "Updated task."
-msgstr ""
+msgstr "更新されたタスク。"
 
 msgid "User"
 msgstr "ユーザー"

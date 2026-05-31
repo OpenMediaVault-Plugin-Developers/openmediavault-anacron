@@ -4,15 +4,15 @@
 # 
 # Translators:
 # dsafsadf <heneral@gmail.com>, 2021
-# zubr139, 2014-2015
+# zubr139, 2014-2015,2025
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 19:15-0600\n"
-"PO-Revision-Date: 2021-12-01 01:15+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/uk/)\n"
+"POT-Creation-Date: 2026-05-31 00:54+0000\n"
+"PO-Revision-Date: 2014-02-12 13:12+0000\n"
+"Last-Translator: zubr139, 2014-2015,2025\n"
+"Language-Team: Ukrainian (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -34,16 +34,16 @@ msgid "Comment"
 msgstr "Коментар"
 
 msgid "Create"
-msgstr ""
+msgstr "Створити"
 
 msgid "Created task."
-msgstr ""
+msgstr "Створене завдання."
 
 msgid "Delay"
 msgstr "Затримка"
 
 msgid "Edit"
-msgstr ""
+msgstr "Редагувати"
 
 msgid "Enable"
 msgstr "Увімкнути"
@@ -52,10 +52,7 @@ msgid "Enabled"
 msgstr "Увімкнено"
 
 msgid "Execute anacron task ..."
-msgstr ""
-
-msgid "Identifer"
-msgstr ""
+msgstr "Виконати завдання anacron ..."
 
 msgid "Identifier"
 msgstr "Ідентифікатор"
@@ -67,7 +64,7 @@ msgid "Run"
 msgstr "Запустити"
 
 msgid "Select an user ..."
-msgstr ""
+msgstr "Виберіть користувача. .."
 
 msgid "Send Email"
 msgstr "Надіслати Електронною Поштою"
@@ -76,7 +73,7 @@ msgid "Send email"
 msgstr "Надіслати електронною поштою"
 
 msgid "Updated task."
-msgstr ""
+msgstr "Оновлене завдання."
 
 msgid "User"
 msgstr "Користувач"

@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the openmediavault-anacron package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-anacron\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-31 00:54+0000\n"
+"PO-Revision-Date: 2014-02-12 13:12+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Lao (Laos) (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/lo_LA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lo_LA\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid ""
+"An email message with the command output (if any produced) is send to the "
+"user who performs the job."
+msgstr "ຂໍ້ຄວາມອີເມວພ້ອມກັບຜົນອອກຂອງຄຳສັ່ງ (ຖ້າມີ) ຈະຖືກສົ່ງໄປຫາຜູ້ໃຊ້ທີ່ດຳເນີນວຽກ."
+
+msgid "Anacron"
+msgstr "Anacron"
+
+msgid "Command"
+msgstr "ຄຳສັ່ງ"
+
+msgid "Comment"
+msgstr "ໝາຍເຫດ"
+
+msgid "Create"
+msgstr "ສ້າງ"
+
+msgid "Created task."
+msgstr "ສ້າງວຽກແລ້ວ."
+
+msgid "Delay"
+msgstr "ການໜ່ວງເວລາ"
+
+msgid "Edit"
+msgstr "ແກ້ໄຂ"
+
+msgid "Enable"
+msgstr "ເປີດໃຊ້ງານ"
+
+msgid "Enabled"
+msgstr "ເປີດໃຊ້ງານແລ້ວ"
+
+msgid "Execute anacron task ..."
+msgstr "ປະຕິບັດວຽກຂອງ anacron ..."
+
+msgid "Identifier"
+msgstr "ຕົວລະບຸ"
+
+msgid "Period"
+msgstr "ໄລຍະເວລາ"
+
+msgid "Run"
+msgstr "ລັນ"
+
+msgid "Select an user ..."
+msgstr "ເລືອກຜູ້ໃຊ້ ..."
+
+msgid "Send Email"
+msgstr "ສົ່ງອີເມວ"
+
+msgid "Send email"
+msgstr "ສົ່ງອີເມວ"
+
+msgid "Updated task."
+msgstr "ອັບເດດວຽກແລ້ວ."
+
+msgid "User"
+msgstr "ຜູ້ໃຊ້"
+
+msgid "daily"
+msgstr "ລາຍວັນ"
+
+msgid "monthly"
+msgstr "ລາຍເດືອນ"
+
+msgid "weekly"
+msgstr "ລາຍອາທິດ"

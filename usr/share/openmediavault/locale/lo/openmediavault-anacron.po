@@ -3,87 +3,84 @@
 # This file is distributed under the same license as the openmediavault-anacron package.
 # 
 # Translators:
-# Karl Jonatan Nyberg, 2023
-# efef6ec5b435a041fce803c7f8af77d2_2341d43, 2017
-# Karl Jonatan Nyberg, 2026
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-31 00:54+0000\n"
 "PO-Revision-Date: 2014-02-12 13:12+0000\n"
-"Last-Translator: Karl Jonatan Nyberg, 2026\n"
-"Language-Team: Swedish (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/sv/)\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Lao (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: lo\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
 "user who performs the job."
-msgstr "Ett e-postmeddelande med kommandoutmatningen (om någon produceras) skickas till användaren som utför jobbet."
+msgstr ""
 
 msgid "Anacron"
-msgstr "Anacron"
+msgstr ""
 
 msgid "Command"
-msgstr "Kommando"
+msgstr ""
 
 msgid "Comment"
-msgstr "Kommentar"
+msgstr ""
 
 msgid "Create"
-msgstr "Skapa"
+msgstr ""
 
 msgid "Created task."
-msgstr "Uppgift skapad."
+msgstr ""
 
 msgid "Delay"
-msgstr "Fördröjning"
+msgstr ""
 
 msgid "Edit"
-msgstr "Redigera"
+msgstr ""
 
 msgid "Enable"
-msgstr "Aktivera"
+msgstr ""
 
 msgid "Enabled"
-msgstr "Aktiverad"
+msgstr ""
 
 msgid "Execute anacron task ..."
-msgstr "Kör Anacron-uppgift ..."
+msgstr ""
 
 msgid "Identifier"
-msgstr "Identifierare"
+msgstr ""
 
 msgid "Period"
-msgstr "Period"
+msgstr ""
 
 msgid "Run"
-msgstr "Kör"
+msgstr ""
 
 msgid "Select an user ..."
-msgstr "Välj en användare ..."
+msgstr ""
 
 msgid "Send Email"
-msgstr "Skicka e-post"
+msgstr ""
 
 msgid "Send email"
-msgstr "Skicka e-post"
+msgstr ""
 
 msgid "Updated task."
-msgstr "Uppgift uppdaterad."
+msgstr ""
 
 msgid "User"
-msgstr "Användare"
+msgstr ""
 
 msgid "daily"
-msgstr "dagligen"
+msgstr ""
 
 msgid "monthly"
-msgstr "månadsvis"
+msgstr ""
 
 msgid "weekly"
-msgstr "veckovis"
+msgstr ""

@@ -3,20 +3,21 @@
 # This file is distributed under the same license as the openmediavault-anacron package.
 # 
 # Translators:
-# Paolo Velati <paolo.velati@gmail.com>, 2014-2015
+# Giovanni Scafora <scafora.giovanni@gmail.com>, 2025
+# d5316b6b4d283a9cbe4ea704ae8abe02_b972f24 <bd82b27c045fcb3aa6bd04640e5224c5_36908>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 19:15-0600\n"
-"PO-Revision-Date: 2021-12-01 01:15+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Italian (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/it/)\n"
+"POT-Creation-Date: 2026-05-31 00:54+0000\n"
+"PO-Revision-Date: 2014-02-12 13:12+0000\n"
+"Last-Translator: Giovanni Scafora <scafora.giovanni@gmail.com>, 2025\n"
+"Language-Team: Italian (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
@@ -33,16 +34,16 @@ msgid "Comment"
 msgstr "Commento"
 
 msgid "Create"
-msgstr ""
+msgstr "Crea"
 
 msgid "Created task."
-msgstr ""
+msgstr "Task creato."
 
 msgid "Delay"
 msgstr "Ritardo"
 
 msgid "Edit"
-msgstr ""
+msgstr "Modifica"
 
 msgid "Enable"
 msgstr "Abilita"
@@ -51,10 +52,7 @@ msgid "Enabled"
 msgstr "Abilitato"
 
 msgid "Execute anacron task ..."
-msgstr ""
-
-msgid "Identifer"
-msgstr ""
+msgstr "Eseguo il task di anacron ..."
 
 msgid "Identifier"
 msgstr "Identificatore"
@@ -66,7 +64,7 @@ msgid "Run"
 msgstr "Esegui"
 
 msgid "Select an user ..."
-msgstr ""
+msgstr "Seleziona un utente ..."
 
 msgid "Send Email"
 msgstr "Invia email"
@@ -75,7 +73,7 @@ msgid "Send email"
 msgstr "Invia email"
 
 msgid "Updated task."
-msgstr ""
+msgstr "Task aggiornato."
 
 msgid "User"
 msgstr "Utente"

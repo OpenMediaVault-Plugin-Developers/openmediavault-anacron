@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the openmediavault-anacron package.
 # 
 # Translators:
+# Oriol Camps Sabater, 2022
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 19:15-0600\n"
-"PO-Revision-Date: 2021-12-01 01:15+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Catalan (Spain) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/ca_ES/)\n"
+"POT-Creation-Date: 2026-05-31 00:54+0000\n"
+"PO-Revision-Date: 2014-02-12 13:12+0000\n"
+"Last-Translator: Oriol Camps Sabater, 2022\n"
+"Language-Team: Catalan (Spain) (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/ca_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,70 +21,67 @@ msgstr ""
 msgid ""
 "An email message with the command output (if any produced) is send to the "
 "user who performs the job."
-msgstr ""
+msgstr "Un missatge de correu electrònic amb la sortida de l'ordre (si es produeix) s'envia a l'usuari que realitza la tasca."
 
 msgid "Anacron"
-msgstr ""
+msgstr "Anacron"
 
 msgid "Command"
-msgstr ""
+msgstr "Ordre"
 
 msgid "Comment"
-msgstr ""
+msgstr "Comenta"
 
 msgid "Create"
-msgstr ""
+msgstr "Crea"
 
 msgid "Created task."
-msgstr ""
+msgstr "Tasca creada."
 
 msgid "Delay"
-msgstr ""
+msgstr "Retard"
 
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 msgid "Enable"
-msgstr ""
+msgstr "Activa"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Activat"
 
 msgid "Execute anacron task ..."
-msgstr ""
-
-msgid "Identifer"
-msgstr ""
+msgstr "Executa una tasca d'anàcron..."
 
 msgid "Identifier"
-msgstr ""
+msgstr "Identificador"
 
 msgid "Period"
-msgstr ""
+msgstr "Període"
 
 msgid "Run"
-msgstr ""
+msgstr "Executa"
 
 msgid "Select an user ..."
-msgstr ""
+msgstr "Seleccioneu un usuari..."
 
 msgid "Send Email"
-msgstr ""
+msgstr "Envia un correu"
 
 msgid "Send email"
-msgstr ""
+msgstr "Envia un correu"
 
 msgid "Updated task."
-msgstr ""
+msgstr "Tasca actualitzada."
 
 msgid "User"
-msgstr ""
+msgstr "Usuari"
 
 msgid "daily"
-msgstr ""
+msgstr "diàriament"
 
 msgid "monthly"
-msgstr ""
+msgstr "mensual"
 
 msgid "weekly"
-msgstr ""
+msgstr "setmanal"

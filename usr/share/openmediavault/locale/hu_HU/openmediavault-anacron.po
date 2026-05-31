@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Falu <info@falu.me>, 2016
+# Gyuris Gellért <jobel@ujevangelizacio.hu>, 2023
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 19:15-0600\n"
-"PO-Revision-Date: 2021-12-01 01:15+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Hungarian (Hungary) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/hu_HU/)\n"
+"POT-Creation-Date: 2026-05-31 00:54+0000\n"
+"PO-Revision-Date: 2014-02-12 13:12+0000\n"
+"Last-Translator: Gyuris Gellért <jobel@ujevangelizacio.hu>, 2023\n"
+"Language-Team: Hungarian (Hungary) (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/hu_HU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,16 +34,16 @@ msgid "Comment"
 msgstr "Megjegyzés"
 
 msgid "Create"
-msgstr ""
+msgstr "Létrehozás"
 
 msgid "Created task."
-msgstr ""
+msgstr "Feladat létrehozva."
 
 msgid "Delay"
 msgstr "Késleltetés"
 
 msgid "Edit"
-msgstr ""
+msgstr "Szerkesztés"
 
 msgid "Enable"
 msgstr "Engedélyez"
@@ -51,10 +52,7 @@ msgid "Enabled"
 msgstr "Engedélyezett"
 
 msgid "Execute anacron task ..."
-msgstr ""
-
-msgid "Identifer"
-msgstr ""
+msgstr "Anacron feladat végrehajtása…"
 
 msgid "Identifier"
 msgstr "Azonosító"
@@ -66,7 +64,7 @@ msgid "Run"
 msgstr "Futtatás"
 
 msgid "Select an user ..."
-msgstr ""
+msgstr "Válassz egy felhasználót..."
 
 msgid "Send Email"
 msgstr "Email küldés"
@@ -75,7 +73,7 @@ msgid "Send email"
 msgstr "Email küldés"
 
 msgid "Updated task."
-msgstr ""
+msgstr "Feladat frissítve."
 
 msgid "User"
 msgstr "Felhasználó"

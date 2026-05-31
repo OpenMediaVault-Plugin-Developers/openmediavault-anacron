@@ -4,14 +4,15 @@
 # 
 # Translators:
 # okpail <okpail@gmail.com>, 2015
+# Stephan Paternotte <stephan@paternottes.net>, 2025
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 19:15-0600\n"
-"PO-Revision-Date: 2021-12-01 01:15+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Dutch (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/nl/)\n"
+"POT-Creation-Date: 2026-05-31 00:54+0000\n"
+"PO-Revision-Date: 2014-02-12 13:12+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>, 2025\n"
+"Language-Team: Dutch (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +22,7 @@ msgstr ""
 msgid ""
 "An email message with the command output (if any produced) is send to the "
 "user who performs the job."
-msgstr "Een email met het resultaat van de opdracht (als er enige output is) wordt naar de gebruiker gestuurd die de opdracht gaf"
+msgstr "Een e-mail met het resultaat van de opdracht (als er enige output is) wordt naar de gebruiker gestuurd die de opdracht gaf"
 
 msgid "Anacron"
 msgstr "Anacron"
@@ -33,28 +34,25 @@ msgid "Comment"
 msgstr "Commentaar"
 
 msgid "Create"
-msgstr ""
+msgstr "Aanmaken"
 
 msgid "Created task."
-msgstr ""
+msgstr "Taak aangemaakt."
 
 msgid "Delay"
 msgstr "Vertraging"
 
 msgid "Edit"
-msgstr ""
+msgstr "Bewerken"
 
 msgid "Enable"
-msgstr "Aanzetten"
+msgstr "Inschakelen"
 
 msgid "Enabled"
-msgstr "Aanzetten"
+msgstr "Ingeschakeld"
 
 msgid "Execute anacron task ..."
-msgstr ""
-
-msgid "Identifer"
-msgstr ""
+msgstr "Anacron-taak uitvoeren…"
 
 msgid "Identifier"
 msgstr "Identifier"
@@ -66,16 +64,16 @@ msgid "Run"
 msgstr "Start"
 
 msgid "Select an user ..."
-msgstr ""
+msgstr "Selecteer een gebruiker…"
 
 msgid "Send Email"
-msgstr "Verzend een email"
+msgstr "E-mail versturen"
 
 msgid "Send email"
-msgstr "Verstuur de email"
+msgstr "E-mail versturen"
 
 msgid "Updated task."
-msgstr ""
+msgstr "Taak bijgewerkt."
 
 msgid "User"
 msgstr "Gebruiker"

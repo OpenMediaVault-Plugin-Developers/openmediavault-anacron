@@ -3,20 +3,21 @@
 # This file is distributed under the same license as the openmediavault-anacron package.
 # 
 # Translators:
+# Kevin Leclercq <nuklearstriker@gmail.com>, 2024
 # Seboss666 <sebastien_verdet@seboss666.info>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 19:15-0600\n"
-"PO-Revision-Date: 2021-12-01 01:15+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: French (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/fr/)\n"
+"POT-Creation-Date: 2026-05-31 00:54+0000\n"
+"PO-Revision-Date: 2014-02-12 13:12+0000\n"
+"Last-Translator: Kevin Leclercq <nuklearstriker@gmail.com>, 2024\n"
+"Language-Team: French (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid ""
 "An email message with the command output (if any produced) is send to the "
@@ -33,16 +34,16 @@ msgid "Comment"
 msgstr "Commentaire"
 
 msgid "Create"
-msgstr ""
+msgstr "Créer"
 
 msgid "Created task."
-msgstr ""
+msgstr "Créer une tache."
 
 msgid "Delay"
 msgstr "Décalage"
 
 msgid "Edit"
-msgstr ""
+msgstr "Editer"
 
 msgid "Enable"
 msgstr "Activer"
@@ -51,10 +52,7 @@ msgid "Enabled"
 msgstr "Activé"
 
 msgid "Execute anacron task ..."
-msgstr ""
-
-msgid "Identifer"
-msgstr ""
+msgstr "Executer une tâche anacron..."
 
 msgid "Identifier"
 msgstr "Identifiant"
@@ -66,7 +64,7 @@ msgid "Run"
 msgstr "Exécuter"
 
 msgid "Select an user ..."
-msgstr ""
+msgstr "Sélectionner un utilisateur..."
 
 msgid "Send Email"
 msgstr "Envoyer un e-mail"
@@ -75,7 +73,7 @@ msgid "Send email"
 msgstr "Envoyer un e-mail"
 
 msgid "Updated task."
-msgstr ""
+msgstr "Mettre à jour la tâche."
 
 msgid "User"
 msgstr "Utilisateur"

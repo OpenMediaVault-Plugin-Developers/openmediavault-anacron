@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the openmediavault-anacron package.
 # 
 # Translators:
-# kochin <kochinc@outlook.com>, 2014
+# kochin <kochinc@outlook.com>, 2014,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 19:15-0600\n"
-"PO-Revision-Date: 2021-12-01 01:15+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/zh_TW/)\n"
+"POT-Creation-Date: 2026-05-31 00:54+0000\n"
+"PO-Revision-Date: 2014-02-12 13:12+0000\n"
+"Last-Translator: kochin <kochinc@outlook.com>, 2014,2021\n"
+"Language-Team: Chinese (Taiwan) (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,16 +33,16 @@ msgid "Comment"
 msgstr "註釋"
 
 msgid "Create"
-msgstr ""
+msgstr "新建"
 
 msgid "Created task."
-msgstr ""
+msgstr "已建立工作。"
 
 msgid "Delay"
 msgstr "延遲"
 
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 msgid "Enable"
 msgstr "啟用"
@@ -51,10 +51,7 @@ msgid "Enabled"
 msgstr "已啟用"
 
 msgid "Execute anacron task ..."
-msgstr ""
-
-msgid "Identifer"
-msgstr ""
+msgstr "執行 anacron 工作 ..."
 
 msgid "Identifier"
 msgstr "識別名稱"
@@ -66,7 +63,7 @@ msgid "Run"
 msgstr "執行"
 
 msgid "Select an user ..."
-msgstr ""
+msgstr "選擇一個用戶 ..."
 
 msgid "Send Email"
 msgstr "發送電子郵件"
@@ -75,7 +72,7 @@ msgid "Send email"
 msgstr "發送電子郵件"
 
 msgid "Updated task."
-msgstr ""
+msgstr "已更新工作。"
 
 msgid "User"
 msgstr "用戶"
