@@ -4,7 +4,8 @@
 # 
 # Translators:
 # Dampflok_HD, 2022
-# Dampflok_HD, 2021
+# Ettore Atalan <atalanttore@googlemail.com>, 2014,2022
+# 49656bee90bb57799c7c1e93ceb9b4ef_2da742e, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-anacron\n"
@@ -12,11 +13,11 @@ msgstr ""
 "POT-Creation-Date: 2026-05-31 00:54+0000\n"
 "PO-Revision-Date: 2014-02-12 13:12+0000\n"
 "Last-Translator: Dampflok_HD, 2022\n"
-"Language-Team: German (Germany) (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/de_DE/)\n"
+"Language-Team: German (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-anacron/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_DE\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ""
